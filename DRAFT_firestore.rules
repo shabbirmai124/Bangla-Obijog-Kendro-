@@ -1,0 +1,156 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Pillar 1 & Phase 4.1: Global Default-Deny Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Phase 3: Hardened Global Helpers
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedUser() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isAdmin() {
+      return isVerifiedUser() && (
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        request.auth.token.email == 'mdshabbirmia516@gmail.com'
+      );
+    }
+
+    // Pillar 2: Validation Blueprints (Synced verbatim with firebase-blueprint.json)
+    function isValidObjection(data) {
+      return data.keys().hasAll([
+        'trackingId', 'title', 'category', 'severity', 'status', 'visibility',
+        'establishmentName', 'jurisdiction', 'batchNumber', 'expiryDate',
+        'manufacturedDate', 'description', 'sha256Hash', 'isEncrypted',
+        'encryptedPayload', 'encryptionIv', 'mediaType', 'mediaUrl',
+        'mediaCaption', 'authorId', 'reporterAlias', 'authorityBadgeId',
+        'authorityNote', 'enforcementAction', 'createdAt', 'updatedAt'
+      ]) &&
+      data.keys().hasOnly([
+        'trackingId', 'title', 'category', 'severity', 'status', 'visibility',
+        'establishmentName', 'jurisdiction', 'batchNumber', 'expiryDate',
+        'manufacturedDate', 'description', 'sha256Hash', 'isEncrypted',
+        'encryptedPayload', 'encryptionIv', 'mediaType', 'mediaUrl',
+        'mediaCaption', 'authorId', 'reporterAlias', 'authorityBadgeId',
+        'authorityNote', 'enforcementAction', 'createdAt', 'updatedAt'
+      ]) &&
+      data.trackingId is string && data.trackingId.size() >= 10 && data.trackingId.size() <= 32 && data.trackingId.matches('^OBJ-2026-[0-9A-Z]{6}$') &&
+      data.title is string && data.title.size() >= 5 && data.title.size() <= 160 &&
+      data.category is string && data.category in ['expired_medicine', 'expired_food', 'adulterated_goods', 'price_violation', 'civic_infrastructure', 'public_safety'] &&
+      data.severity is string && data.severity in ['routine', 'elevated', 'high', 'critical'] &&
+      data.status is string && data.status in ['submitted', 'under_investigation', 'verified_violation', 'enforcement_action', 'resolved', 'dismissed'] &&
+      data.visibility is string && data.visibility in ['public', 'restricted'] &&
+      data.establishmentName is string && data.establishmentName.size() >= 2 && data.establishmentName.size() <= 140 &&
+      data.jurisdiction is string && data.jurisdiction.size() >= 2 && data.jurisdiction.size() <= 120 &&
+      data.batchNumber is string && data.batchNumber.size() >= 1 && data.batchNumber.size() <= 64 &&
+      data.expiryDate is string && data.expiryDate.size() <= 32 &&
+      data.manufacturedDate is string && data.manufacturedDate.size() <= 32 &&
+      data.description is string && data.description.size() >= 10 && data.description.size() <= 2000 &&
+      data.sha256Hash is string && data.sha256Hash.size() == 64 && data.sha256Hash.matches('^[a-f0-9]{64}$') &&
+      data.isEncrypted is bool &&
+      data.encryptedPayload is string && data.encryptedPayload.size() <= 4000 &&
+      data.encryptionIv is string && data.encryptionIv.size() <= 64 &&
+      data.mediaType is string && data.mediaType in ['none', 'image', 'video'] &&
+      data.mediaUrl is string && data.mediaUrl.size() <= 250000 &&
+      data.mediaCaption is string && data.mediaCaption.size() <= 240 &&
+      data.authorId is string && data.authorId.size() >= 1 && data.authorId.size() <= 128 && data.authorId.matches('^[a-zA-Z0-9_\\-]+$') &&
+      data.reporterAlias is string && data.reporterAlias.size() >= 2 && data.reporterAlias.size() <= 80 &&
+      data.authorityBadgeId is string && data.authorityBadgeId.size() <= 64 &&
+      data.authorityNote is string && data.authorityNote.size() <= 2000 &&
+      data.enforcementAction is string && data.enforcementAction.size() <= 500 &&
+      data.createdAt is timestamp &&
+      data.updatedAt is timestamp;
+    }
+
+    function isValidAdminRecord(data) {
+      return data.keys().hasAll(['uid', 'badgeNumber', 'department', 'createdAt']) &&
+        data.keys().hasOnly(['uid', 'badgeNumber', 'department', 'createdAt']) &&
+        data.uid is string && data.uid.size() >= 1 && data.uid.size() <= 128 && data.uid.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.badgeNumber is string && data.badgeNumber.size() >= 3 && data.badgeNumber.size() <= 64 &&
+        data.department is string && data.department.size() >= 2 && data.department.size() <= 120 &&
+        data.createdAt is timestamp;
+    }
+
+    // Collection: /objections/{objectionId}
+    match /objections/{objectionId} {
+      allow get: if isValidId(objectionId) && (
+        existing().visibility == 'public' ||
+        (isSignedIn() && (existing().authorId == request.auth.uid || isAdmin()))
+      );
+
+      allow list: if existing().visibility == 'public' ||
+        (isSignedIn() && existing().authorId == request.auth.uid);
+
+      allow create: if isVerifiedUser() &&
+        isValidId(objectionId) &&
+        isValidObjection(incoming()) &&
+        incoming().authorId == request.auth.uid &&
+        incoming().createdAt == request.time &&
+        incoming().updatedAt == request.time &&
+        (
+          (
+            incoming().status == 'submitted' &&
+            incoming().authorityBadgeId == '' &&
+            incoming().authorityNote == '' &&
+            incoming().enforcementAction == ''
+          ) ||
+          isAdmin()
+        );
+
+      allow update: if isVerifiedUser() &&
+        isValidId(objectionId) &&
+        isValidObjection(incoming()) &&
+        incoming().authorId == existing().authorId &&
+        incoming().createdAt == existing().createdAt &&
+        incoming().trackingId == existing().trackingId &&
+        incoming().sha256Hash == existing().sha256Hash &&
+        incoming().updatedAt == request.time &&
+        (
+          // Action 1: Citizen Author amends supplementary details before terminal resolution
+          (
+            existing().authorId == request.auth.uid &&
+            !(existing().status in ['resolved', 'dismissed']) &&
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'description', 'mediaType', 'mediaUrl', 'mediaCaption', 'updatedAt'
+            ])
+          ) ||
+          // Action 2: Regulatory Authority / Admin verifies and updates official status
+          (
+            isAdmin() &&
+            incoming().diff(existing()).affectedKeys().hasOnly([
+              'status', 'severity', 'authorityBadgeId', 'authorityNote', 'enforcementAction', 'updatedAt'
+            ])
+          )
+        );
+
+      allow delete: if isVerifiedUser() && isValidId(objectionId) && isAdmin();
+    }
+
+    // Collection: /admins/{adminId}
+    match /admins/{adminId} {
+      allow get: if isVerifiedUser() && isValidId(adminId) && (request.auth.uid == adminId || isAdmin());
+      allow list: if false;
+      allow create: if isVerifiedUser() && isValidId(adminId) && isValidAdminRecord(incoming()) && incoming().uid == adminId && incoming().createdAt == request.time && isAdmin();
+      allow update: if isVerifiedUser() && isValidId(adminId) && isValidAdminRecord(incoming()) && incoming().uid == existing().uid && incoming().createdAt == existing().createdAt && incoming().diff(existing()).affectedKeys().hasOnly(['badgeNumber', 'department']) && isAdmin();
+      allow delete: if isVerifiedUser() && isValidId(adminId) && isAdmin();
+    }
+  }
+}

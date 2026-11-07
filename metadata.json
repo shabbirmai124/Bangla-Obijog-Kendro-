@@ -1,0 +1,6 @@
+{
+  "name": "AegisCivic — National Public Objection & Regulatory Verification Ledger",
+  "description": "Cryptographically secured public grievance, expired pharmaceutical & food batch reporting, and regulatory authority verification platform with end-to-end tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

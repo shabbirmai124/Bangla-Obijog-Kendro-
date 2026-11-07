@@ -1,0 +1,245 @@
+{
+  "entities": {
+    "Objection": {
+      "title": "Objection",
+      "description": "A cryptographically sealed public objection or regulatory violation dossier (such as expired medicine, expired food, price gouging, or public safety hazard) tracked by a unique tracking number and verified by regulatory authorities.",
+      "type": "object",
+      "properties": {
+        "trackingId": {
+          "type": "string",
+          "description": "Unique tracking identifier formatted as OBJ-2026-XXXXXX.",
+          "minLength": 10,
+          "maxLength": 32,
+          "pattern": "^OBJ-2026-[0-9A-Z]{6}$"
+        },
+        "title": {
+          "type": "string",
+          "description": "Concise summary headline of the objection.",
+          "minLength": 5,
+          "maxLength": 160
+        },
+        "category": {
+          "type": "string",
+          "description": "Regulatory classification category.",
+          "enum": [
+            "expired_medicine",
+            "expired_food",
+            "adulterated_goods",
+            "price_violation",
+            "civic_infrastructure",
+            "public_safety"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "description": "Risk severity tier assessed from expiration delta and public exposure.",
+          "enum": ["routine", "elevated", "high", "critical"]
+        },
+        "status": {
+          "type": "string",
+          "description": "Current regulatory verification and enforcement lifecycle stage.",
+          "enum": [
+            "submitted",
+            "under_investigation",
+            "verified_violation",
+            "enforcement_action",
+            "resolved",
+            "dismissed"
+          ]
+        },
+        "visibility": {
+          "type": "string",
+          "description": "Access visibility tier for query enforcement.",
+          "enum": ["public", "restricted"]
+        },
+        "establishmentName": {
+          "type": "string",
+          "description": "Name of pharmacy, supermarket, manufacturer, or civic entity.",
+          "minLength": 2,
+          "maxLength": 140
+        },
+        "jurisdiction": {
+          "type": "string",
+          "description": "City, district, or regional regulatory jurisdiction.",
+          "minLength": 2,
+          "maxLength": 120
+        },
+        "batchNumber": {
+          "type": "string",
+          "description": "Printed batch, lot, or serial identifier on the product or site.",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "expiryDate": {
+          "type": "string",
+          "description": "Printed expiration date on the medicine or food product (YYYY-MM-DD).",
+          "minLength": 0,
+          "maxLength": 32
+        },
+        "manufacturedDate": {
+          "type": "string",
+          "description": "Printed manufacturing or packaging date (YYYY-MM-DD).",
+          "minLength": 0,
+          "maxLength": 32
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed factual statement of the objection and observed hazard.",
+          "minLength": 10,
+          "maxLength": 2000
+        },
+        "sha256Hash": {
+          "type": "string",
+          "description": "Hex-encoded 64-character SHA-256 integrity digest of the dossier payload.",
+          "minLength": 64,
+          "maxLength": 64,
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "isEncrypted": {
+          "type": "boolean",
+          "description": "Whether an AES-256-GCM encrypted confidential whistleblower note is attached."
+        },
+        "encryptedPayload": {
+          "type": "string",
+          "description": "Base64-encoded AES-256-GCM ciphertext of confidential witness/supply-chain evidence.",
+          "minLength": 0,
+          "maxLength": 4000
+        },
+        "encryptionIv": {
+          "type": "string",
+          "description": "Base64-encoded 96-bit initialization vector for AES-256-GCM decryption.",
+          "minLength": 0,
+          "maxLength": 64
+        },
+        "mediaType": {
+          "type": "string",
+          "description": "Type of attached visual inspection evidence.",
+          "enum": ["none", "image", "video"]
+        },
+        "mediaUrl": {
+          "type": "string",
+          "description": "URL or encoded data URI of attached photo or video evidence.",
+          "minLength": 0,
+          "maxLength": 250000
+        },
+        "mediaCaption": {
+          "type": "string",
+          "description": "Documentary caption describing the attached photo or video evidence.",
+          "minLength": 0,
+          "maxLength": 240
+        },
+        "authorId": {
+          "type": "string",
+          "description": "Authenticated UID of the submitting citizen.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "reporterAlias": {
+          "type": "string",
+          "description": "Publicly safe display alias or pseudonymous citizen identifier (no PII).",
+          "minLength": 2,
+          "maxLength": 80
+        },
+        "authorityBadgeId": {
+          "type": "string",
+          "description": "Official badge/credential ID of the verifying regulatory inspector.",
+          "minLength": 0,
+          "maxLength": 64
+        },
+        "authorityNote": {
+          "type": "string",
+          "description": "Official laboratory or field inspection verification report.",
+          "minLength": 0,
+          "maxLength": 2000
+        },
+        "enforcementAction": {
+          "type": "string",
+          "description": "Official regulatory directive, recall notice, or penalty issued.",
+          "minLength": 0,
+          "maxLength": 500
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the objection was originally sealed."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest verification or update."
+        }
+      },
+      "required": [
+        "trackingId",
+        "title",
+        "category",
+        "severity",
+        "status",
+        "visibility",
+        "establishmentName",
+        "jurisdiction",
+        "batchNumber",
+        "expiryDate",
+        "manufacturedDate",
+        "description",
+        "sha256Hash",
+        "isEncrypted",
+        "encryptedPayload",
+        "encryptionIv",
+        "mediaType",
+        "mediaUrl",
+        "mediaCaption",
+        "authorId",
+        "reporterAlias",
+        "authorityBadgeId",
+        "authorityNote",
+        "enforcementAction",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "AdminRecord": {
+      "title": "AdminRecord",
+      "description": "Trusted regulatory authority administrator record used for RBAC verification.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Administrator user UID.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "badgeNumber": {
+          "type": "string",
+          "description": "Official regulatory inspector credential ID.",
+          "minLength": 3,
+          "maxLength": 64
+        },
+        "department": {
+          "type": "string",
+          "description": "Regulatory agency division.",
+          "minLength": 2,
+          "maxLength": 120
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when admin credential was registered."
+        }
+      },
+      "required": ["uid", "badgeNumber", "department", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/objections/{objectionId}": {
+      "schema": { "$ref": "#/entities/Objection" },
+      "description": "Primary ledger of public objections, expired medicine/food reports, and authority verification states."
+    },
+    "/admins/{adminId}": {
+      "schema": { "$ref": "#/entities/AdminRecord" },
+      "description": "Trusted registry of regulatory authority administrators."
+    }
+  }
+}
