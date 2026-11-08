@@ -28,7 +28,7 @@ export const EvidenceMediaViewer: React.FC<EvidenceMediaViewerProps> = ({
 
   if (mediaType === 'none' || !mediaUrl) {
     return (
-      <div className="bg-[#F3EFE6] border border-[#E2DCD3] rounded-lg p-4 text-xs text-[#57534E]">
+      <div className="bg-[#F1F5F9] border border-[#CBD5E1] rounded-lg p-4 text-xs text-[#475569]">
         {lang === 'bn'
           ? 'এই নথিতে কোনো দৃশ্যমান ছবি বা ভিডিও সংযুক্ত করা হয়নি। শুধুমাত্র ক্রিপ্টোগ্রাফিক লিখিত বিবৃতি রয়েছে।'
           : 'No visual media attached to this dossier. Cryptographic text statement only.'}
@@ -41,72 +41,80 @@ export const EvidenceMediaViewer: React.FC<EvidenceMediaViewerProps> = ({
     const isSynthetic = mediaUrl.startsWith('synthetic-inspection-video:');
     return (
       <figure className="w-full">
-        <div
-          className={`relative w-full overflow-hidden rounded-lg bg-[#141413] text-[#FBF9F5] border border-[#292524] ${
-            compact ? 'h-48' : 'h-64 sm:h-72'
-          }`}
-        >
+        <div className="w-full overflow-hidden rounded-lg bg-white border border-[#CBD5E1]">
           {isSynthetic ? (
-            <div className="w-full h-full flex flex-col justify-between p-5 bg-gradient-to-br from-[#1C1917] via-[#1E293B] to-[#0F172A]">
-              <div className="flex items-center justify-between text-xs font-mono-tabular text-[#D6CEBE]">
-                <span>
+            <div className="flex flex-col">
+              {/* Top Header Bar — Clean Bangladesh Government Institutional Slate */}
+              <div className="px-4 py-2.5 bg-[#F1F5F9] border-b border-[#CBD5E1] flex items-center justify-between text-xs font-mono-tabular text-[#0F172A]">
+                <span className="font-semibold text-[#006A4E]">
                   {lang === 'bn'
-                    ? 'ফরেনসিক ভিডিও আর্কাইভ · ইউভি ম্যাক্রো ফিড'
-                    : 'FORENSIC VIDEO ARCHIVE · UV MACRO FEED'}
+                    ? 'ভিডিও প্রমাণ নথি · ল্যাবরেটরি ম্যাক্রো যাচাই'
+                    : 'VIDEO EVIDENCE RECORD · LAB MACRO INSPECTION'}
                 </span>
-                <span>
+                <span className="text-[#334155] font-medium">
                   {lang === 'bn' ? 'ব্যাচ:' : 'BATCH:'} {batchNumber || 'UNSPECIFIED'}
                 </span>
               </div>
 
-              <div className="my-auto border border-white/15 rounded-md p-4 bg-black/40 backdrop-blur-xs">
-                <p className="text-xs uppercase tracking-widest text-[#93C5FD] font-mono-tabular">
+              {/* Visual Video Frame with Real Macro Photograph & Clean Light Inspection Overlay */}
+              <div className={`relative w-full overflow-hidden bg-[#F8FAFC] ${compact ? 'h-36' : 'h-44 sm:h-48'}`}>
+                <img
+                  src="/src/assets/images/evidence_medicine_blister_batch_1794048839663.jpg"
+                  alt={mediaCaption || `Video frame for batch ${batchNumber}`}
+                  className={`w-full h-full object-cover transition-transform duration-500 ${
+                    isPlayingSyntheticVideo ? 'scale-105' : 'scale-100'
+                  }`}
+                />
+                <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded bg-white/95 border border-[#CBD5E1] text-[11px] font-mono-tabular font-semibold text-[#0F172A] shadow-2xs">
                   {isPlayingSyntheticVideo
                     ? lang === 'bn'
-                      ? 'ভিডিও ফ্রেম স্ট্রিম চলছে · ৬০ এফপিএস ম্যাক্রো স্ক্যান'
-                      : 'PLAYING FRAME STREAM · 60 FPS MACRO SCAN'
+                      ? 'চলমান দৃশ্য · ০০:০৯ / ০০:১৮'
+                      : 'PLAYING CLIP · 00:09 / 00:18'
                     : lang === 'bn'
-                    ? 'স্থির ফ্রেম ০০:০৬.১৪ · ইউভি ফ্লুরোসেন্স বিশ্লেষণ'
-                    : 'PAUSED AT KEYFRAME 00:06.14 · UV FLUORESCENCE MATCH'}
-                </p>
-                <div className="mt-2 grid grid-cols-2 gap-4 text-xs font-mono-tabular">
-                  <div>
-                    <span className="text-stone-400 block">
-                      {lang === 'bn' ? 'বাইরের কালির ছাপ' : 'OUTER INK STAMP'}
-                    </span>
-                    <span className="text-amber-300 font-semibold">
-                      {lang === 'bn'
-                        ? 'রাসায়নিক ওভারপ্রিন্ট শনাক্ত'
-                        : 'SOLVENT OVERPRINT DETECTED'}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-stone-400 block">
-                      {lang === 'bn' ? 'ভেতরের খোদাইকৃত মেয়াদ' : 'INNER CRIMP EMBOSS'}
-                    </span>
-                    <span className="text-rose-400 font-semibold">
-                      {lang === 'bn' ? 'মেয়াদ:' : 'EXP:'} {expiryDate || '2026-07-30'}
-                    </span>
-                  </div>
+                    ? 'স্থির ফ্রেম · ০০:০৬ / ০০:১৮'
+                    : 'KEYFRAME · 00:06 / 00:18'}
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              {/* Clean Institutional Findings Row (No Dark/Neon AI Colors) */}
+              <div className="p-3.5 bg-[#F8FAFC] border-t border-[#CBD5E1] grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div className="bg-white p-2.5 rounded border border-[#CBD5E1]">
+                  <span className="text-[#475569] block text-[11px]">
+                    {lang === 'bn' ? 'বাইরের মোড়কের ছাপ যাচাই' : 'Outer Packaging Stamp Check'}
+                  </span>
+                  <span className="text-[#0F172A] font-semibold font-mono-tabular">
+                    {lang === 'bn'
+                      ? 'কালি মুছে পুনরায় মুদ্রণ শনাক্ত'
+                      : 'Overprinted Expiry Ink Detected'}
+                  </span>
+                </div>
+                <div className="bg-white p-2.5 rounded border border-[#CBD5E1]">
+                  <span className="text-[#475569] block text-[11px]">
+                    {lang === 'bn' ? 'ভেতরের খোদাইকৃত প্রকৃত মেয়াদ' : 'Inner Embossed Original Expiry'}
+                  </span>
+                  <span className="text-[#C8102E] font-semibold font-mono-tabular">
+                    {lang === 'bn' ? 'মেয়াদ:' : 'EXP:'} {expiryDate || '2026-07-30'}
+                  </span>
+                </div>
+              </div>
+
+              {/* Clean Bangladesh Government Bottle Green Playback Controls */}
+              <div className="px-4 py-2.5 bg-white border-t border-[#CBD5E1] flex items-center gap-3">
                 <button
                   type="button"
                   onClick={() => {
                     setIsPlayingSyntheticVideo((prev) => !prev);
-                    setVideoFrameProgress((prev) => (prev >= 95 ? 20 : prev + 25));
+                    setVideoFrameProgress((prev) => (prev >= 95 ? 25 : prev + 25));
                   }}
                   aria-label={
                     isPlayingSyntheticVideo ? 'Pause forensic video' : 'Play forensic video'
                   }
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white text-[#1C1917] text-xs font-semibold hover:bg-stone-200 transition-colors shrink-0"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#006A4E] text-white text-xs font-semibold hover:bg-[#00523C] transition-colors shrink-0 cursor-pointer"
                 >
                   {isPlayingSyntheticVideo ? (
                     <>
                       <Pause className="w-3.5 h-3.5" />
-                      <span>{lang === 'bn' ? 'বিরতি' : 'Pause Clip'}</span>
+                      <span>{lang === 'bn' ? 'বিরতি দিন' : 'Pause Video'}</span>
                     </>
                   ) : (
                     <>
@@ -115,13 +123,13 @@ export const EvidenceMediaViewer: React.FC<EvidenceMediaViewerProps> = ({
                     </>
                   )}
                 </button>
-                <div className="flex-1 h-1.5 bg-white/20 rounded-full overflow-hidden">
+                <div className="flex-1 h-2 bg-[#E2E8F0] rounded-full overflow-hidden border border-[#CBD5E1]">
                   <div
-                    className="h-full bg-[#60A5FA] transition-transform duration-150"
+                    className="h-full bg-[#006A4E] transition-all duration-200"
                     style={{ width: `${videoFrameProgress}%` }}
                   />
                 </div>
-                <span className="text-xs font-mono-tabular text-stone-300">
+                <span className="text-xs font-mono-tabular font-medium text-[#334155]">
                   {lang === 'bn' ? '০০:১৮' : '00:18'}
                 </span>
               </div>
@@ -131,7 +139,7 @@ export const EvidenceMediaViewer: React.FC<EvidenceMediaViewerProps> = ({
               src={mediaUrl}
               controls
               preload="metadata"
-              className="w-full h-full object-contain bg-black"
+              className={`w-full object-contain bg-[#F8FAFC] ${compact ? 'h-48' : 'h-64 sm:h-72'}`}
             >
               {lang === 'bn'
                 ? 'আপনার ব্রাউজার ভিডিও প্লেব্যাক সমর্থন করে না।'
@@ -140,7 +148,7 @@ export const EvidenceMediaViewer: React.FC<EvidenceMediaViewerProps> = ({
           )}
         </div>
         {mediaCaption && (
-          <figcaption className="text-xs font-serif-display italic text-[#57534E] mt-2">
+          <figcaption className="text-xs font-serif-display italic text-[#475569] mt-2">
             {mediaCaption}
           </figcaption>
         )}
@@ -151,46 +159,48 @@ export const EvidenceMediaViewer: React.FC<EvidenceMediaViewerProps> = ({
   // Image evidence with mandatory resilient fallback
   return (
     <figure className="w-full">
-      <div
-        className={`relative w-full overflow-hidden rounded-lg bg-[#EBE6DF] border border-[#E2DCD3] ${
-          compact ? 'h-48' : 'h-64 sm:h-80'
-        }`}
-      >
-        {!imgError ? (
-          <img
-            src={mediaUrl}
-            alt={mediaCaption || `Inspection evidence for batch ${batchNumber}`}
-            referrerPolicy="no-referrer"
-            onError={() => setImgError(true)}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#F3EFE6] to-[#E5DEC9]">
-            <ImageIcon className="w-8 h-8 text-[#57534E] mb-2" />
-            <p className="text-sm font-semibold text-[#1C1917]">
-              {lang === 'bn'
-                ? 'প্রমাণ আলোকচিত্র আর্কাইভে সিলযুক্ত'
-                : 'Evidentiary Photograph Sealed in Archive'}
-            </p>
-            <p className="text-xs font-mono-tabular text-[#57534E] mt-1">
-              {lang === 'bn' ? 'ব্যাচ:' : 'Batch:'} {batchNumber} ·{' '}
-              {lang === 'bn' ? 'মেয়াদ:' : 'Expiry:'} {expiryDate || 'Recorded'}
-            </p>
-          </div>
-        )}
-        <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-4 py-2.5 flex items-center justify-between text-xs text-white font-mono-tabular">
-          <span>
+      <div className="w-full overflow-hidden rounded-lg bg-white border border-[#CBD5E1]">
+        <div
+          className={`relative w-full overflow-hidden bg-[#F1F5F9] ${
+            compact ? 'h-44' : 'h-60 sm:h-72'
+          }`}
+        >
+          {!imgError ? (
+            <img
+              src={mediaUrl}
+              alt={mediaCaption || `Inspection evidence for batch ${batchNumber}`}
+              referrerPolicy="no-referrer"
+              onError={() => setImgError(true)}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-[#F8FAFC]">
+              <ImageIcon className="w-8 h-8 text-[#475569] mb-2" />
+              <p className="text-sm font-semibold text-[#0F172A]">
+                {lang === 'bn'
+                  ? 'প্রমাণ আলোকচিত্র আর্কাইভে সিলযুক্ত'
+                  : 'Evidentiary Photograph Sealed in Archive'}
+              </p>
+              <p className="text-xs font-mono-tabular text-[#475569] mt-1">
+                {lang === 'bn' ? 'ব্যাচ:' : 'Batch:'} {batchNumber} ·{' '}
+                {lang === 'bn' ? 'মেয়াদ:' : 'Expiry:'} {expiryDate || 'Recorded'}
+              </p>
+            </div>
+          )}
+        </div>
+        <div className="bg-[#F8FAFC] border-t border-[#CBD5E1] px-3.5 py-2 flex items-center justify-between text-xs text-[#0F172A] font-mono-tabular">
+          <span className="font-semibold text-[#006A4E]">
             {lang === 'bn' ? 'ব্যাচ:' : 'BATCH:'} {batchNumber}
           </span>
           {expiryDate && (
-            <span>
+            <span className="font-semibold text-[#C8102E]">
               {lang === 'bn' ? 'মুদ্রিত মেয়াদ:' : 'STAMPED EXP:'} {expiryDate}
             </span>
           )}
         </div>
       </div>
       {mediaCaption && (
-        <figcaption className="text-xs font-serif-display italic text-[#57534E] mt-2">
+        <figcaption className="text-xs font-serif-display italic text-[#475569] mt-2">
           {mediaCaption}
         </figcaption>
       )}

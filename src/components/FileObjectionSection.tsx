@@ -474,22 +474,22 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
       aria-labelledby="file-objection-heading"
       className="max-w-[1360px] mx-auto px-6 py-12"
     >
-      <div className="pb-6 border-b border-[#E2DCD3] flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+      <div className="pb-6 border-b border-[#CBD5E1] flex flex-col lg:flex-row lg:items-end justify-between gap-4">
         <div>
-          <p className="text-xs uppercase tracking-widest text-[#14532D] font-semibold">
+          <p className="text-xs uppercase tracking-widest text-[#006A4E] font-semibold">
             {lang === 'bn'
               ? '০২. সর্বজনীন নাগরিক অভিযোগ ও প্রমাণ দাখিল ফর্ম'
               : '02. UNIVERSAL CITIZEN OBJECTION & EVIDENCE FILING FORM'}
           </p>
           <h2
             id="file-objection-heading"
-            className="mt-1 text-2xl sm:text-3xl font-serif-display font-semibold text-[#1C1917]"
+            className="mt-1 text-2xl sm:text-3xl font-serif-display font-semibold text-[#0F172A]"
           >
             {lang === 'bn'
               ? 'মেয়াদোত্তীর্ণ ঔষধ, খাদ্য ও দেশের যেকোনো জনসমস্যার অভিযোগ দাখিল করুন'
               : 'Submit Any Public Objection with Image, Age & Full Details'}
           </h2>
-          <p className="mt-2 text-sm text-[#57534E] max-w-2xl">
+          <p className="mt-2 text-sm text-[#475569] max-w-2xl">
             {lang === 'bn'
               ? 'মেয়াদোত্তীর্ণ ঔষধ, ভেজাল খাদ্য, অতিরিক্ত মূল্য, রাস্তাঘাট বা নাগরিক ভোগান্তি—যেকোনো সমস্যার ছবি, আপনার বয়স ও বিস্তারিত বিবরণ সহজেই জমা দিন এবং সাথে সাথে একটি র‍্যান্ডম অনন্য ট্র্যাকিং নম্বর পান।'
               : 'Submit any problem happening across the country—expired medicine, unsafe food, price gouging, infrastructure hazards, or public grievances—with photo/video evidence, reporter age, and full details.'}
@@ -498,34 +498,34 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
 
         {/* Quick Pre-fill Presets for Fast User-Friendly Inspection */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs text-[#57534E]">
+          <span className="text-xs text-[#475569]">
             {lang === 'bn' ? 'এক-ক্লিকে নমুনা পূরণ:' : 'Quick-Fill Sample:'}
           </span>
           <button
             type="button"
             onClick={() => handleFillSampleTemplate('medicine')}
-            className="px-3 py-1.5 text-xs font-medium bg-[#EBE6DF] hover:bg-[#DFD8CE] text-[#1C1917] rounded-md transition-colors whitespace-nowrap cursor-pointer"
+            className="px-3 py-1.5 text-xs font-medium bg-[#E2E8F0] hover:bg-[#CBD5E1] text-[#0F172A] rounded-md transition-colors whitespace-nowrap cursor-pointer"
           >
             {lang === 'bn' ? 'মেয়াদোত্তীর্ণ ঔষধ নমুনা' : 'Expired Medicine Preset'}
           </button>
           <button
             type="button"
             onClick={() => handleFillSampleTemplate('food')}
-            className="px-3 py-1.5 text-xs font-medium bg-[#EBE6DF] hover:bg-[#DFD8CE] text-[#1C1917] rounded-md transition-colors whitespace-nowrap cursor-pointer"
+            className="px-3 py-1.5 text-xs font-medium bg-[#E2E8F0] hover:bg-[#CBD5E1] text-[#0F172A] rounded-md transition-colors whitespace-nowrap cursor-pointer"
           >
             {lang === 'bn' ? 'মেয়াদোত্তীর্ণ খাদ্য নমুনা' : 'Expired Food Preset'}
           </button>
           <button
             type="button"
             onClick={() => handleFillSampleTemplate('civic')}
-            className="px-3 py-1.5 text-xs font-medium bg-[#EBE6DF] hover:bg-[#DFD8CE] text-[#1C1917] rounded-md transition-colors whitespace-nowrap cursor-pointer"
+            className="px-3 py-1.5 text-xs font-medium bg-[#E2E8F0] hover:bg-[#CBD5E1] text-[#0F172A] rounded-md transition-colors whitespace-nowrap cursor-pointer"
           >
             {lang === 'bn' ? 'নাগরিক ও জনদুর্ভোগ নমুনা' : 'General Public Problem Preset'}
           </button>
           <button
             type="button"
             onClick={() => handleFillSampleTemplate('video')}
-            className="px-3 py-1.5 text-xs font-medium bg-[#EBE6DF] hover:bg-[#DFD8CE] text-[#1C1917] rounded-md transition-colors whitespace-nowrap cursor-pointer"
+            className="px-3 py-1.5 text-xs font-medium bg-[#E2E8F0] hover:bg-[#CBD5E1] text-[#0F172A] rounded-md transition-colors whitespace-nowrap cursor-pointer"
           >
             {lang === 'bn' ? 'ফরেনসিক ভিডিও নমুনা' : 'Forensic Video Preset'}
           </button>
@@ -533,9 +533,9 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
       </div>
 
       {/* User-Friendly Step-by-Step Filing Guide Bar */}
-      <div className="mt-6 p-4 bg-[#F3EFE6] border border-[#D6CEBE] rounded-xl flex flex-wrap items-center justify-between gap-4 text-xs">
-        <div className="flex flex-wrap items-center gap-4 text-[#1C1917]">
-          <span className="font-semibold text-[#14532D]">
+      <div className="mt-6 p-4 bg-[#F1F5F9] border border-[#CBD5E1] rounded-xl flex flex-wrap items-center justify-between gap-4 text-xs">
+        <div className="flex flex-wrap items-center gap-4 text-[#0F172A]">
+          <span className="font-semibold text-[#006A4E]">
             {lang === 'bn' ? 'সহজ ৩টি ধাপে অভিযোগ করুন:' : '3 Easy Steps to Submit:'}
           </span>
           <span>
@@ -561,7 +561,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
           <button
             type="button"
             onClick={onOpenFeatureGuide}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#14532D] bg-white border border-[#14532D]/30 rounded-lg hover:bg-[#EBE6DF] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#006A4E] bg-white border border-[#006A4E]/30 rounded-lg hover:bg-[#ECFDF5] transition-colors cursor-pointer"
           >
             <BookOpen className="w-3.5 h-3.5" />
             <span>
@@ -579,11 +579,11 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
           role="region"
           aria-label="Official Cryptographic Filing Receipt"
           data-testid="filing-receipt-card"
-          className="mt-8 p-6 sm:p-8 bg-[#F3EFE6] border-2 border-[#14532D] rounded-xl shadow-xs"
+          className="mt-8 p-6 sm:p-8 bg-[#ECFDF5] border-2 border-[#006A4E] rounded-xl shadow-xs"
         >
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div>
-              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-[#14532D] uppercase tracking-wider">
+              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-[#006A4E] uppercase tracking-wider">
                 <CheckCircle2 className="w-4 h-4 shrink-0" />
                 <span>
                   {lang === 'bn'
@@ -593,28 +593,28 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
               </div>
 
               <div className="mt-3 flex flex-wrap items-baseline gap-3">
-                <span className="text-xs font-semibold text-[#57534E]">
+                <span className="text-xs font-semibold text-[#475569]">
                   {lang === 'bn' ? 'আপনার অনন্য ট্র্যাকিং নম্বর:' : 'Your Unique Tracking Number:'}
                 </span>
                 <h3
                   data-testid="generated-tracking-id"
-                  className="text-2xl sm:text-3xl font-mono-tabular font-bold text-[#14532D] tracking-tight bg-white px-3.5 py-1 rounded-lg border border-[#14532D]/30"
+                  className="text-2xl sm:text-3xl font-mono-tabular font-bold text-[#006A4E] tracking-tight bg-white px-3.5 py-1 rounded-lg border border-[#006A4E]/30"
                 >
                   {submittedRecord.trackingId}
                 </h3>
               </div>
 
-              <p className="mt-3 text-sm text-[#1C1917]">
+              <p className="mt-3 text-sm text-[#0F172A]">
                 <strong>{localizedSubmittedRecord?.title || submittedRecord.title}</strong> —{' '}
                 {lang === 'bn' ? 'সংশ্লিষ্ট অধিদপ্তর:' : 'Routed to Directorate:'}{' '}
-                <strong className="text-[#14532D]">
+                <strong className="text-[#006A4E]">
                   {lang === 'bn'
                     ? DIRECTORATE_MAPPING[submittedRecord.category].bn
                     : DIRECTORATE_MAPPING[submittedRecord.category].en}
                 </strong>
               </p>
 
-              <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-[#44403C]">
+              <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-[#334155]">
                 <span>
                   {lang === 'bn' ? 'অভিযোগকারী:' : 'Reporter:'}{' '}
                   <strong>{localizedSubmittedRecord?.reporterAlias || submittedRecord.reporterAlias}</strong>
@@ -647,9 +647,9 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                 </span>
               </div>
 
-              <div className="mt-2.5 flex flex-wrap items-center gap-3 text-xs font-mono-tabular text-[#57534E]">
+              <div className="mt-2.5 flex flex-wrap items-center gap-3 text-xs font-mono-tabular text-[#475569]">
                 <span className="inline-flex items-center gap-1">
-                  <KeyRound className="w-3.5 h-3.5 text-[#14532D]" />
+                  <KeyRound className="w-3.5 h-3.5 text-[#006A4E]" />
                   <span>
                     {lang === 'bn' ? 'ডিজিটাল হ্যাশ সিল:' : 'SHA-256 Digest:'}{' '}
                     {submittedRecord.sha256Hash}
@@ -675,7 +675,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                   setCopiedId(true);
                   setTimeout(() => setCopiedId(false), 2000);
                 }}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#1C1917] bg-white border border-[#D6CEBE] rounded-lg hover:bg-[#EBE6DF] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#0F172A] bg-white border border-[#CBD5E1] rounded-lg hover:bg-[#F1F5F9] transition-colors cursor-pointer"
               >
                 <Copy className="w-3.5 h-3.5" />
                 <span>
@@ -692,7 +692,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
               <button
                 type="button"
                 onClick={handleDownloadReceipt}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#1C1917] bg-white border border-[#D6CEBE] rounded-lg hover:bg-[#EBE6DF] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#0F172A] bg-white border border-[#CBD5E1] rounded-lg hover:bg-[#F1F5F9] transition-colors cursor-pointer"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>{lang === 'bn' ? 'ডিজিটাল রসিদ ডাউনলোড' : 'Download Signed Receipt'}</span>
@@ -701,7 +701,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
               <button
                 type="button"
                 onClick={() => window.print()}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#1C1917] bg-white border border-[#D6CEBE] rounded-lg hover:bg-[#EBE6DF] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#0F172A] bg-white border border-[#CBD5E1] rounded-lg hover:bg-[#F1F5F9] transition-colors cursor-pointer"
               >
                 <Printer className="w-3.5 h-3.5" />
                 <span>{lang === 'bn' ? 'রসিদ প্রিন্ট করুন' : 'Print Receipt'}</span>
@@ -710,7 +710,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
               <button
                 type="button"
                 onClick={() => onTrackNewlyCreated(submittedRecord.trackingId)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-[#14532D] rounded-lg hover:bg-[#0F3F22] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-[#006A4E] rounded-lg hover:bg-[#00523C] transition-colors cursor-pointer"
               >
                 <span>{lang === 'bn' ? 'এখনই ট্র্যাক করুন' : 'Track Live Status'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -723,23 +723,23 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
       {/* Main Filing Form Grid */}
       <form onSubmit={handleSubmit} noValidate className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left 7 Columns: Structured Evidentiary Fields */}
-        <div className="lg:col-span-7 space-y-6 bg-white p-6 sm:p-8 border border-[#E2DCD3] rounded-xl">
-          <div className="border-b border-[#EBE6DF] pb-3 flex flex-wrap items-center justify-between gap-2">
-            <h3 className="text-lg font-serif-display font-semibold text-[#1C1917]">
+        <div className="lg:col-span-7 space-y-6 bg-white p-6 sm:p-8 border border-[#CBD5E1] rounded-xl">
+          <div className="border-b border-[#E2E8F0] pb-3 flex flex-wrap items-center justify-between gap-2">
+            <h3 className="text-lg font-serif-display font-semibold text-[#0F172A]">
               {lang === 'bn'
                 ? 'ক অংশ — সমস্যার ধরন, আপনার বয়স ও অভিযোগের বিস্তারিত বিবরণ'
                 : 'Part A — Problem Category, Reporter Age & Objection Details'}
             </h3>
-            <span className="text-xs font-semibold text-[#14532D]">
+            <span className="text-xs font-semibold text-[#006A4E]">
               {lang === 'bn' ? assignedDirectorate.bn : assignedDirectorate.en}
             </span>
           </div>
 
           {/* Owner Permission Gate Notice when Strict Lock is Enabled */}
           {requireOwnerPermission && (
-            <div className="p-4 bg-[#F3EFE6] border-2 border-[#14532D] rounded-xl space-y-3">
+            <div className="p-4 bg-[#ECFDF5] border-2 border-[#006A4E] rounded-xl space-y-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-xs font-semibold text-[#14532D] flex items-center gap-1.5">
+                <span className="text-xs font-semibold text-[#006A4E] flex items-center gap-1.5">
                   <Lock className="w-3.5 h-3.5" />
                   <span>
                     {lang === 'bn'
@@ -750,7 +750,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                 <button
                   type="button"
                   onClick={() => setEnteredPermissionCode(ownerPermissionCode)}
-                  className="px-2.5 py-1 text-xs font-semibold bg-white border border-[#14532D]/40 text-[#14532D] rounded hover:bg-[#EBE6DF] cursor-pointer"
+                  className="px-2.5 py-1 text-xs font-semibold bg-white border border-[#006A4E]/40 text-[#006A4E] rounded hover:bg-[#F1F5F9] cursor-pointer"
                 >
                   {lang === 'bn'
                     ? 'অনুমোদিত কোড স্বয়ংক্রিয়ভাবে পূরণ করুন'
@@ -760,7 +760,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
               <div>
                 <label
                   htmlFor="owner-permission-code"
-                  className="block text-xs font-semibold text-[#1C1917] mb-1"
+                  className="block text-xs font-semibold text-[#0F172A] mb-1"
                 >
                   {lang === 'bn'
                     ? 'মালিক অনুমোদিত অ্যাক্সেস কোড *'
@@ -776,10 +776,10 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                       ? `অনুমতি কোড লিখুন (যেমন: ${ownerPermissionCode})`
                       : `Enter Owner Passcode (e.g. ${ownerPermissionCode})`
                   }
-                  className="w-full px-3.5 py-2 text-xs font-mono-tabular bg-white border border-[#D6CEBE] rounded-lg text-[#1C1917]"
+                  className="w-full px-3.5 py-2 text-xs font-mono-tabular bg-white border border-[#CBD5E1] rounded-lg text-[#0F172A]"
                 />
                 {errors.permissionCode && (
-                  <p className="mt-1 text-xs text-[#9A3412]">{errors.permissionCode}</p>
+                  <p className="mt-1 text-xs text-[#C8102E]">{errors.permissionCode}</p>
                 )}
               </div>
             </div>
@@ -789,7 +789,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
           <div>
             <label
               htmlFor="objection-category"
-              className="block text-xs font-semibold text-[#1C1917] mb-2"
+              className="block text-xs font-semibold text-[#0F172A] mb-2"
             >
               {lang === 'bn'
                 ? '১. কোন ধরনের সমস্যা বা অভিযোগ দাখিল করতে চান নির্বাচন করুন *'
@@ -806,8 +806,8 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                     onClick={() => setCategory(cat)}
                     className={`p-2.5 text-left text-xs font-medium rounded-lg border transition-colors cursor-pointer ${
                       isSelected
-                        ? 'bg-[#14532D] text-white border-[#14532D] font-semibold'
-                        : 'bg-[#FBF9F5] text-[#1C1917] border-[#D6CEBE] hover:bg-[#F3EFE6]'
+                        ? 'bg-[#006A4E] text-white border-[#006A4E] font-semibold'
+                        : 'bg-[#F8FAFC] text-[#0F172A] border-[#CBD5E1] hover:bg-[#F1F5F9]'
                     }`}
                   >
                     {catLabels[cat]}
@@ -820,7 +820,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
               id="objection-category"
               value={category}
               onChange={(e) => setCategory(e.target.value as ObjectionCategory)}
-              className="w-full px-3.5 py-2.5 text-sm bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+              className="w-full px-3.5 py-2.5 text-sm bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
             >
               {(Object.keys(catLabels) as ObjectionCategory[]).map((cat) => (
                 <option key={cat} value={cat}>
@@ -835,7 +835,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
             <div className="sm:col-span-8">
               <label
                 htmlFor="objection-alias"
-                className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                className="block text-xs font-semibold text-[#0F172A] mb-1.5"
               >
                 {lang === 'bn'
                   ? 'অভিযোগকারীর নাম বা ছদ্মনাম (গোপনীয়তা সুরক্ষিত) *'
@@ -847,17 +847,17 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                 value={reporterAlias}
                 onChange={(e) => setReporterAlias(e.target.value)}
                 placeholder={lang === 'bn' ? 'যেমন: সচেতন নাগরিক ৭০৪' : 'e.g. Citizen Observer #704'}
-                className="w-full px-3.5 py-2.5 text-sm bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+                className="w-full px-3.5 py-2.5 text-sm bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
               />
               {errors.reporterAlias && (
-                <p className="mt-1 text-xs text-[#9A3412]">{errors.reporterAlias}</p>
+                <p className="mt-1 text-xs text-[#C8102E]">{errors.reporterAlias}</p>
               )}
             </div>
 
             <div className="sm:col-span-4">
               <label
                 htmlFor="objection-age"
-                className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                className="block text-xs font-semibold text-[#0F172A] mb-1.5"
               >
                 {lang === 'bn' ? 'অভিযোগকারীর বয়স (বছর) *' : 'Reporter Age (Years) *'}
               </label>
@@ -869,10 +869,10 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                 value={reporterAge}
                 onChange={(e) => setReporterAge(e.target.value)}
                 placeholder={lang === 'bn' ? 'যেমন: ২৮' : 'e.g. 28'}
-                className="w-full px-3.5 py-2.5 text-sm font-mono-tabular bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+                className="w-full px-3.5 py-2.5 text-sm font-mono-tabular bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
               />
               {errors.reporterAge && (
-                <p className="mt-1 text-xs text-[#9A3412]">{errors.reporterAge}</p>
+                <p className="mt-1 text-xs text-[#C8102E]">{errors.reporterAge}</p>
               )}
             </div>
           </div>
@@ -880,7 +880,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
           <div>
             <label
               htmlFor="objection-title"
-              className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+              className="block text-xs font-semibold text-[#0F172A] mb-1.5"
             >
               {lang === 'bn' ? 'অভিযোগের সংক্ষিপ্ত শিরোনাম *' : 'Objection Headline *'}
             </label>
@@ -894,16 +894,16 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                   ? 'যেমন: মেয়াদোত্তীর্ণ ঔষধ বিক্রয় অথবা এলাকায় দূষিত পানি সরবরাহ'
                   : 'e.g. Selling Expired Medicine or Unsafe Municipal Water Supply Hazard'
               }
-              className="w-full px-3.5 py-2.5 text-sm bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+              className="w-full px-3.5 py-2.5 text-sm bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
             />
-            {errors.title && <p className="mt-1 text-xs text-[#9A3412]">{errors.title}</p>}
+            {errors.title && <p className="mt-1 text-xs text-[#C8102E]">{errors.title}</p>}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label
                 htmlFor="objection-establishment"
-                className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                className="block text-xs font-semibold text-[#0F172A] mb-1.5"
               >
                 {lang === 'bn'
                   ? 'অভিযুক্ত প্রতিষ্ঠান / দোকান / স্থানের নাম *'
@@ -919,17 +919,17 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                     ? 'ফার্মেসি, সুপারশপ, হাসপাতাল বা স্থানের নাম লিখুন'
                     : 'Pharmacy, Supermarket, Hospital, or Location Name'
                 }
-                className="w-full px-3.5 py-2.5 text-sm bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+                className="w-full px-3.5 py-2.5 text-sm bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
               />
               {errors.establishmentName && (
-                <p className="mt-1 text-xs text-[#9A3412]">{errors.establishmentName}</p>
+                <p className="mt-1 text-xs text-[#C8102E]">{errors.establishmentName}</p>
               )}
             </div>
 
             <div>
               <label
                 htmlFor="objection-jurisdiction"
-                className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                className="block text-xs font-semibold text-[#0F172A] mb-1.5"
               >
                 {lang === 'bn'
                   ? 'জেলা / থানা / সিটি কর্পোরেশন এলাকা *'
@@ -945,10 +945,10 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                     ? 'যেমন: ঢাকা মহানগরী — ধানমন্ডি ওয়ার্ড ১২'
                     : 'e.g. Dhaka Metropolitan — Ward 12'
                 }
-                className="w-full px-3.5 py-2.5 text-sm bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+                className="w-full px-3.5 py-2.5 text-sm bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
               />
               {errors.jurisdiction && (
-                <p className="mt-1 text-xs text-[#9A3412]">{errors.jurisdiction}</p>
+                <p className="mt-1 text-xs text-[#C8102E]">{errors.jurisdiction}</p>
               )}
             </div>
           </div>
@@ -958,7 +958,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
             <div>
               <label
                 htmlFor="objection-batch"
-                className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                className="block text-xs font-semibold text-[#0F172A] mb-1.5"
               >
                 {isBatchCategory
                   ? lang === 'bn'
@@ -974,17 +974,17 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                 value={batchNumber}
                 onChange={(e) => setBatchNumber(e.target.value)}
                 placeholder={isBatchCategory ? 'e.g. LOT-AB23101' : 'GEN-REF-2026'}
-                className="w-full px-3 py-2 text-sm font-mono-tabular bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+                className="w-full px-3 py-2 text-sm font-mono-tabular bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
               />
               {errors.batchNumber && (
-                <p className="mt-1 text-xs text-[#9A3412]">{errors.batchNumber}</p>
+                <p className="mt-1 text-xs text-[#C8102E]">{errors.batchNumber}</p>
               )}
             </div>
 
             <div>
               <label
                 htmlFor="objection-mfg-date"
-                className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                className="block text-xs font-semibold text-[#0F172A] mb-1.5"
               >
                 {lang === 'bn'
                   ? 'উৎপাদন বা ঘটনার শুরুর তারিখ'
@@ -995,14 +995,14 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                 type="date"
                 value={manufacturedDate}
                 onChange={(e) => setManufacturedDate(e.target.value)}
-                className="w-full px-3 py-2 text-sm font-mono-tabular bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+                className="w-full px-3 py-2 text-sm font-mono-tabular bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
               />
             </div>
 
             <div>
               <label
                 htmlFor="objection-exp-date"
-                className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                className="block text-xs font-semibold text-[#0F172A] mb-1.5"
               >
                 {category === 'expired_medicine' || category === 'expired_food'
                   ? lang === 'bn'
@@ -1017,35 +1017,35 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                 type="date"
                 value={expiryDate}
                 onChange={(e) => setExpiryDate(e.target.value)}
-                className="w-full px-3 py-2 text-sm font-mono-tabular bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+                className="w-full px-3 py-2 text-sm font-mono-tabular bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
               />
               {errors.expiryDate && (
-                <p className="mt-1 text-xs text-[#9A3412]">{errors.expiryDate}</p>
+                <p className="mt-1 text-xs text-[#C8102E]">{errors.expiryDate}</p>
               )}
             </div>
           </div>
 
           {/* Live Automated Expiry Delta & Risk Assessment Strip */}
-          <div className="p-3.5 bg-[#F3EFE6] border border-[#DFD8CE] rounded-lg flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div className="p-3.5 bg-[#F1F5F9] border border-[#CBD5E1] rounded-lg flex flex-wrap items-center justify-between gap-2 text-xs">
             <div>
-              <span className="font-semibold text-[#1C1917]">
+              <span className="font-semibold text-[#0F172A]">
                 {lang === 'bn' ? 'স্বয়ংক্রিয় মেয়াদ বিশ্লেষণ: ' : 'Automated Expiry Assessment: '}
               </span>
               <span
                 className={
                   expiryAnalysis.isExpired
-                    ? 'font-mono-tabular font-semibold text-[#9A3412]'
-                    : 'font-mono-tabular text-[#57534E]'
+                    ? 'font-mono-tabular font-semibold text-[#C8102E]'
+                    : 'font-mono-tabular text-[#475569]'
                 }
               >
                 {expiryText}
               </span>
             </div>
             <div>
-              <span className="text-[#57534E]">
+              <span className="text-[#475569]">
                 {lang === 'bn' ? 'নির্ধারিত ঝুঁকি মাত্রা: ' : 'Assigned Severity Tier: '}
               </span>
-              <span className="font-semibold text-[#1C1917]">
+              <span className="font-semibold text-[#0F172A]">
                 {severityLabels[expiryAnalysis.recommendedSeverity]}
               </span>
             </div>
@@ -1054,7 +1054,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
           <div>
             <label
               htmlFor="objection-description"
-              className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+              className="block text-xs font-semibold text-[#0F172A] mb-1.5"
             >
               {lang === 'bn'
                 ? 'অভিযোগের বিস্তারিত বিবরণ ও প্রমাণাদি *'
@@ -1070,48 +1070,48 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                   ? 'সমস্যার বিস্তারিত বিবরণ, ঔষধ বা খাদ্যের বর্তমান অবস্থা, দোকানের অবস্থান এবং জনস্বাস্থ্য ঝুঁকির পূর্ণাঙ্গ তথ্য লিখুন...'
                   : 'Write the complete details of your objection: product condition, exact location, printed dates, and public impact...'
               }
-              className="w-full px-3.5 py-2.5 text-sm bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+              className="w-full px-3.5 py-2.5 text-sm bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
             />
             {errors.description && (
-              <p className="mt-1 text-xs text-[#9A3412]">{errors.description}</p>
+              <p className="mt-1 text-xs text-[#C8102E]">{errors.description}</p>
             )}
           </div>
 
           {/* Client-Side AES-256-GCM Confidential Whistleblower Encryption */}
-          <div className="pt-4 border-t border-[#EBE6DF]">
+          <div className="pt-4 border-t border-[#E2E8F0]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Lock className="w-4 h-4 text-[#14532D]" />
-                <span className="text-sm font-semibold text-[#1C1917]">
+                <Lock className="w-4 h-4 text-[#006A4E]" />
+                <span className="text-sm font-semibold text-[#0F172A]">
                   {lang === 'bn'
                     ? 'গোপনীয় তথ্যদাতা সুরক্ষা (ব্রাউজার এনক্রিপশন)'
                     : 'Client-Side AES-256-GCM Confidential Whistleblower Note'}
                 </span>
               </div>
-              <label className="inline-flex items-center gap-2 text-xs text-[#57534E] cursor-pointer">
+              <label className="inline-flex items-center gap-2 text-xs text-[#475569] cursor-pointer">
                 <input
                   type="checkbox"
                   checked={enableEncryption}
                   onChange={(e) => setEnableEncryption(e.target.checked)}
-                  className="rounded border-[#D6CEBE] text-[#14532D] focus:ring-[#14532D]"
+                  className="rounded border-[#CBD5E1] text-[#006A4E] focus:ring-[#006A4E]"
                 />
                 <span>
                   {lang === 'bn' ? 'এনক্রিপশন সক্রিয় করুন' : 'Enable AES-256-GCM Encryption'}
                 </span>
               </label>
             </div>
-            <p className="mt-1 text-xs text-[#57534E]">
+            <p className="mt-1 text-xs text-[#475569]">
               {lang === 'bn'
                 ? 'পাইকারি সরবরাহকারীর চালান বা গোপনীয় সাক্ষীর তথ্য আপনার ব্রাউজারেই ১০০,০০০ ইটারেশন দ্বারা এনক্রিপ্ট হয়ে সার্ভারে জমা হবে।'
                 : 'Encrypts sensitive distributor invoices, witness names, or supply-chain leads locally in your browser using PBKDF2 (100,000 SHA-256 iterations) before transmission.'}
             </p>
 
             {enableEncryption && (
-              <div className="mt-4 space-y-4 p-4 bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg">
+              <div className="mt-4 space-y-4 p-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg">
                 <div>
                   <label
                     htmlFor="confidential-note"
-                    className="block text-xs font-semibold text-[#1C1917] mb-1"
+                    className="block text-xs font-semibold text-[#0F172A] mb-1"
                   >
                     {lang === 'bn'
                       ? 'গোপনীয় সরবরাহকারী বা গুদামের তথ্য (শুধুমাত্র পাসফ্রেজ দিয়ে পাঠযোগ্য)'
@@ -1127,13 +1127,13 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                         ? 'ঐচ্ছিক: পাইকারি ডিলারের ইনভয়েস নম্বর, গুদামের অবস্থান বা সাক্ষীর তথ্য লিখুন...'
                         : 'Optional: Enter distributor invoice numbers, warehouse bay details, or witness contact...'
                     }
-                    className="w-full px-3 py-2 text-xs bg-white border border-[#D6CEBE] rounded-lg text-[#1C1917]"
+                    className="w-full px-3 py-2 text-xs bg-white border border-[#CBD5E1] rounded-lg text-[#0F172A]"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="encryption-passphrase"
-                    className="block text-xs font-semibold text-[#1C1917] mb-1"
+                    className="block text-xs font-semibold text-[#0F172A] mb-1"
                   >
                     {lang === 'bn'
                       ? 'গোপন ডিক্রিপশন পাসফ্রেজ'
@@ -1149,10 +1149,10 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                         ? 'কমপক্ষে ৬ অক্ষরের গোপন পাসফ্রেজ লিখুন (যেমন: AEGIS-INSPECT-2026)'
                         : 'Enter at least 6 characters (e.g. AEGIS-INSPECT-2026)'
                     }
-                    className="w-full px-3 py-2 text-xs font-mono-tabular bg-white border border-[#D6CEBE] rounded-lg text-[#1C1917]"
+                    className="w-full px-3 py-2 text-xs font-mono-tabular bg-white border border-[#CBD5E1] rounded-lg text-[#0F172A]"
                   />
                   {errors.encryptionPassphrase && (
-                    <p className="mt-1 text-xs text-[#9A3412]">{errors.encryptionPassphrase}</p>
+                    <p className="mt-1 text-xs text-[#C8102E]">{errors.encryptionPassphrase}</p>
                   )}
                 </div>
               </div>
@@ -1162,8 +1162,8 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
 
         {/* Right 5 Columns: Photo/Video Evidence Uploader & Cryptographic Seal Preview */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="bg-white p-6 border border-[#E2DCD3] rounded-xl space-y-5">
-            <h3 className="text-lg font-serif-display font-semibold text-[#1C1917] border-b border-[#EBE6DF] pb-3">
+          <div className="bg-white p-6 border border-[#CBD5E1] rounded-xl space-y-5">
+            <h3 className="text-lg font-serif-display font-semibold text-[#0F172A] border-b border-[#E2E8F0] pb-3">
               {lang === 'bn'
                 ? 'খ অংশ — অভিযোগের ছবি ও ভিডিও প্রমাণ সংযুক্তি'
                 : 'Part B — Submit Objection Image & Video Evidence'}
@@ -1173,15 +1173,15 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
             <div className="space-y-3">
               <label
                 htmlFor="evidence-file-upload"
-                className="flex flex-col items-center justify-center p-5 border-2 border-dashed border-[#14532D]/50 rounded-xl bg-[#FBF9F5] hover:bg-[#F3EFE6] transition-colors cursor-pointer text-center"
+                className="flex flex-col items-center justify-center p-5 border-2 border-dashed border-[#006A4E]/50 rounded-xl bg-[#F8FAFC] hover:bg-[#ECFDF5] transition-colors cursor-pointer text-center"
               >
-                <Upload className="w-6 h-6 text-[#14532D] mb-2" />
-                <span className="text-xs font-semibold text-[#1C1917]">
+                <Upload className="w-6 h-6 text-[#006A4E] mb-2" />
+                <span className="text-xs font-semibold text-[#0F172A]">
                   {lang === 'bn'
                     ? 'এখানে ক্লিক করে অভিযোগের ছবি বা ভিডিও আপলোড করুন'
                     : 'Click to Upload Objection Photo or Video Evidence'}
                 </span>
-                <span className="text-[11px] text-[#57534E] mt-1">
+                <span className="text-[11px] text-[#475569] mt-1">
                   {lang === 'bn'
                     ? 'মোবাইল ক্যামেরা বা গ্যালারি থেকে ছবি (JPG, PNG, WEBP) ও ভিডিও (MP4, WEBM) সমর্থন করে'
                     : 'Supports mobile camera & gallery images (JPG, PNG, WEBP) and video clips (MP4, WEBM)'}
@@ -1197,7 +1197,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
 
               {/* Built-in Preset Evidence Switcher */}
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs text-[#57534E]">
+                <span className="text-xs text-[#475569]">
                   {lang === 'bn' ? 'প্রমাণ নমুনা:' : 'Sample Media:'}
                 </span>
                 <button
@@ -1213,8 +1213,8 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                   }}
                   className={`inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded border cursor-pointer ${
                     mediaType === 'image' && mediaUrl === SAMPLE_MEDICINE_IMAGE
-                      ? 'bg-[#14532D] text-white border-[#14532D]'
-                      : 'bg-[#FBF9F5] text-[#1C1917] border-[#D6CEBE]'
+                      ? 'bg-[#006A4E] text-white border-[#006A4E]'
+                      : 'bg-[#F8FAFC] text-[#0F172A] border-[#CBD5E1]'
                   }`}
                 >
                   <ImageIcon className="w-3 h-3" />
@@ -1233,8 +1233,8 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                   }}
                   className={`inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded border cursor-pointer ${
                     mediaType === 'image' && mediaUrl === SAMPLE_FOOD_IMAGE
-                      ? 'bg-[#14532D] text-white border-[#14532D]'
-                      : 'bg-[#FBF9F5] text-[#1C1917] border-[#D6CEBE]'
+                      ? 'bg-[#006A4E] text-white border-[#006A4E]'
+                      : 'bg-[#F8FAFC] text-[#0F172A] border-[#CBD5E1]'
                   }`}
                 >
                   <ImageIcon className="w-3 h-3" />
@@ -1253,8 +1253,8 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                   }}
                   className={`inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded border cursor-pointer ${
                     mediaType === 'video'
-                      ? 'bg-[#14532D] text-white border-[#14532D]'
-                      : 'bg-[#FBF9F5] text-[#1C1917] border-[#D6CEBE]'
+                      ? 'bg-[#006A4E] text-white border-[#006A4E]'
+                      : 'bg-[#F8FAFC] text-[#0F172A] border-[#CBD5E1]'
                   }`}
                 >
                   <FileVideo className="w-3 h-3" />
@@ -1277,7 +1277,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
             <div>
               <label
                 htmlFor="evidence-caption"
-                className="block text-xs font-semibold text-[#1C1917] mb-1"
+                className="block text-xs font-semibold text-[#0F172A] mb-1"
               >
                 {lang === 'bn' ? 'ছবির বর্ণনা বা ক্যাপশন' : 'Evidence Image / Video Caption'}
               </label>
@@ -1286,28 +1286,28 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                 type="text"
                 value={mediaCaption}
                 onChange={(e) => setMediaCaption(e.target.value)}
-                className="w-full px-3 py-2 text-xs bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917]"
+                className="w-full px-3 py-2 text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A]"
               />
             </div>
           </div>
 
           {/* Live SHA-256 Cryptographic Seal Box & Submit Button */}
-          <div className="bg-[#1C1917] text-[#FBF9F5] p-6 rounded-xl space-y-4">
+          <div className="bg-[#F8FAFC] border-2 border-[#006A4E] text-[#0F172A] p-6 rounded-xl space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono-tabular uppercase tracking-wider text-emerald-300">
+              <span className="text-xs font-mono-tabular font-semibold uppercase tracking-wider text-[#006A4E]">
                 {lang === 'bn'
                   ? 'লাইভ ডিজিটাল ক্রিপ্টোগ্রাফিক সিল'
                   : 'LIVE SHA-256 DOSSIER SEAL'}
               </span>
-              <Shield className="w-4 h-4 text-emerald-400" />
+              <Shield className="w-4 h-4 text-[#006A4E]" />
             </div>
-            <p className="text-xs font-mono-tabular break-all text-emerald-300 bg-black/40 p-3 rounded-lg border border-white/10">
+            <p className="text-xs font-mono-tabular break-all text-[#0F172A] bg-white p-3 rounded-lg border border-[#CBD5E1]">
               {liveHashPreview ||
                 (lang === 'bn'
                   ? 'ডিজিটাল হ্যাশ হিসাব করা হচ্ছে...'
                   : 'Computing cryptographic SHA-256 digest...')}
             </p>
-            <p className="text-xs text-stone-300 leading-relaxed">
+            <p className="text-xs text-[#334155] leading-relaxed">
               {lang === 'bn'
                 ? 'অভিযোগ জমা দেওয়ার সাথে সাথে একটি স্বয়ংক্রিয় র‍্যান্ডম অনন্য ট্র্যাকিং নম্বর তৈরি হবে এবং এই হ্যাশটি আপনার নথির সাথে স্থায়ীভাবে যুক্ত হবে।'
                 : 'Upon submission, a random unique Tracking Number is generated and permanently bound to this digest so any alteration is mathematically provable.'}
@@ -1317,7 +1317,7 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
               type="submit"
               disabled={isSubmitting}
               aria-label="Seal & Submit Public Objection"
-              className="w-full py-3 px-5 text-sm font-semibold text-white bg-[#14532D] hover:bg-[#166534] disabled:opacity-50 rounded-lg transition-colors cursor-pointer"
+              className="w-full py-3 px-5 text-sm font-semibold text-white bg-[#006A4E] hover:bg-[#00523C] disabled:opacity-50 rounded-lg transition-colors cursor-pointer"
             >
               {isSubmitting
                 ? lang === 'bn'
@@ -1328,9 +1328,9 @@ export const FileObjectionSection: React.FC<FileObjectionSectionProps> = ({
                 : 'Seal & Submit Public Objection'}
             </button>
 
-            <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] text-stone-400">
+            <div className="pt-2 border-t border-[#CBD5E1] flex items-center justify-between text-[11px] text-[#475569]">
               <span className="inline-flex items-center gap-1">
-                <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <UserCheck className="w-3.5 h-3.5 text-[#006A4E]" />
                 <span>
                   {lang === 'bn'
                     ? 'মালিকানা ও তদারকি: mdshabbirmia516@gmail.com'

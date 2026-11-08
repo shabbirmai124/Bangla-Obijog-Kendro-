@@ -116,21 +116,21 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
       data-testid="feature-permission-modal"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-xs overflow-y-auto"
     >
-      <div className="bg-[#FBF9F5] border-2 border-[#14532D] rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-xl text-[#1C1917]">
+      <div className="bg-[#F8FAFC] border-2 border-[#006A4E] rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-xl text-[#0F172A]">
         {/* Top Modal Header */}
-        <div className="sticky top-0 z-10 bg-[#F3EFE6] border-b border-[#E2DCD3] px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+        <div className="sticky top-0 z-10 bg-[#F1F5F9] border-b border-[#CBD5E1] px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
-            <BookOpen className="w-5 h-5 text-[#14532D] shrink-0" />
+            <BookOpen className="w-5 h-5 text-[#006A4E] shrink-0" />
             <div>
               <h2
                 id="feature-permission-modal-title"
-                className="text-lg sm:text-xl font-serif-display font-bold text-[#14532D]"
+                className="text-lg sm:text-xl font-serif-display font-bold text-[#006A4E]"
               >
                 {lang === 'bn'
                   ? 'বৈশিষ্ট্য নির্দেশিকা, গিটহাব ডকুমেন্টেশন ও মালিকের অনুমতি নীতিমালা'
                   : 'Complete Feature Guide, GitHub Documentation & Owner Permission Policy'}
               </h2>
-              <p className="text-xs text-[#57534E]">
+              <p className="text-xs text-[#475569]">
                 {lang === 'bn'
                   ? 'বাংলা অভিযোগ কেন্দ্র — সর্বস্বত্ব সংরক্ষিত ও অনুমোদিত নিয়ন্ত্রণ কেন্দ্র'
                   : 'Bangla Obijog Kendro — All Rights Reserved & Authorized Access Control'}
@@ -143,7 +143,7 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
             <button
               type="button"
               onClick={() => setShowBilingualDualView((v) => !v)}
-              className="px-3 py-1.5 text-xs font-semibold bg-white border border-[#D6CEBE] rounded-lg hover:bg-[#EBE6DF] transition-colors cursor-pointer"
+              className="px-3 py-1.5 text-xs font-semibold bg-white border border-[#CBD5E1] rounded-lg hover:bg-[#E2E8F0] transition-colors cursor-pointer"
             >
               {showBilingualDualView
                 ? lang === 'bn'
@@ -154,13 +154,13 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
                 : 'Show Bangla + English Together'}
             </button>
 
-            <div className="inline-flex items-center gap-1 p-0.5 bg-[#E2DCD3] rounded-md border border-[#D6CEBE]">
-              <Globe className="w-3.5 h-3.5 text-[#14532D] ml-1.5" />
+            <div className="inline-flex items-center gap-1 p-0.5 bg-[#E2E8F0] rounded-md border border-[#CBD5E1]">
+              <Globe className="w-3.5 h-3.5 text-[#006A4E] ml-1.5" />
               <button
                 type="button"
                 onClick={() => onChangeLang('bn')}
                 className={`px-2.5 py-1 text-xs font-semibold rounded cursor-pointer ${
-                  lang === 'bn' ? 'bg-[#14532D] text-white' : 'text-[#1C1917]'
+                  lang === 'bn' ? 'bg-[#006A4E] text-white' : 'text-[#0F172A]'
                 }`}
               >
                 বাংলা
@@ -169,7 +169,7 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
                 type="button"
                 onClick={() => onChangeLang('en')}
                 className={`px-2.5 py-1 text-xs font-semibold rounded cursor-pointer ${
-                  lang === 'en' ? 'bg-[#14532D] text-white' : 'text-[#1C1917]'
+                  lang === 'en' ? 'bg-[#006A4E] text-white' : 'text-[#0F172A]'
                 }`}
               >
                 English
@@ -180,7 +180,7 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
               type="button"
               onClick={onClose}
               aria-label="Close Feature & Permission Guide"
-              className="p-1.5 text-[#57534E] hover:text-[#1C1917] rounded-lg hover:bg-[#E2DCD3] transition-colors cursor-pointer"
+              className="p-1.5 text-[#475569] hover:text-[#0F172A] rounded-lg hover:bg-[#E2E8F0] transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -191,11 +191,11 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
           {/* Section 1: Owner Permission & Access Control Gate */}
           <div
             data-testid="owner-permission-card"
-            className="p-5 bg-white border-2 border-[#14532D] rounded-xl space-y-4"
+            className="p-5 bg-white border-2 border-[#006A4E] rounded-xl space-y-4"
           >
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#EBE6DF] pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E2E8F0] pb-4">
               <div>
-                <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#14532D] uppercase tracking-wider">
+                <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#006A4E] uppercase tracking-wider">
                   <ShieldCheck className="w-4 h-4" />
                   <span>
                     {lang === 'bn'
@@ -203,12 +203,12 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
                       : 'Owner License & Permission Gate (Unauthorized Use Prohibited)'}
                   </span>
                 </div>
-                <h3 className="mt-1 text-base sm:text-lg font-serif-display font-bold text-[#1C1917]">
+                <h3 className="mt-1 text-base sm:text-lg font-serif-display font-bold text-[#0F172A]">
                   {lang === 'bn'
                     ? 'প্রধান মালিক ও প্রশাসক: mdshabbirmia516@gmail.com'
                     : 'Sole Owner & Master Administrator: mdshabbirmia516@gmail.com'}
                 </h3>
-                <p className="mt-1 text-xs text-[#57534E] leading-relaxed">
+                <p className="mt-1 text-xs text-[#475569] leading-relaxed">
                   {lang === 'bn'
                     ? 'মালিকের (mdshabbirmia516@gmail.com) পূর্বানুমতি ব্যতীত এই ওয়েবসাইট, সোর্স কোড বা ডাটাবেস বাণিজ্যিক বা অননুমোদিত কাজে ব্যবহার, কপি বা পরিবর্তন করা সম্পূর্ণ নিষিদ্ধ।'
                     : 'No person or entity may deploy, modify, redistribute, or execute administrative actions on this portal without explicit permission from the owner (mdshabbirmia516@gmail.com).'}
@@ -219,8 +219,8 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
                 <span
                   className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold ${
                     requireOwnerPermission
-                      ? 'bg-[#9A3412] text-white'
-                      : 'bg-[#14532D] text-white'
+                      ? 'bg-[#C8102E] text-white'
+                      : 'bg-[#006A4E] text-white'
                   }`}
                 >
                   {requireOwnerPermission ? (
@@ -245,7 +245,7 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
                 </span>
 
                 {isOwnerAuthenticated && (
-                  <span className="inline-flex items-center gap-1 text-xs text-[#14532D] font-semibold">
+                  <span className="inline-flex items-center gap-1 text-xs text-[#006A4E] font-semibold">
                     <UserCheck className="w-3.5 h-3.5" />
                     <span>
                       {lang === 'bn' ? 'মালিক সেশন যাচাইকৃত' : 'Owner Session Verified'}
@@ -256,20 +256,20 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
             </div>
 
             {/* Interactive Owner Permission Controls */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-[#F3EFE6] p-4 rounded-lg border border-[#D6CEBE]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-[#F1F5F9] p-4 rounded-lg border border-[#CBD5E1]">
               <div className="space-y-1">
-                <p className="text-xs font-semibold text-[#1C1917] flex items-center gap-1.5">
-                  <KeyRound className="w-3.5 h-3.5 text-[#14532D]" />
+                <p className="text-xs font-semibold text-[#0F172A] flex items-center gap-1.5">
+                  <KeyRound className="w-3.5 h-3.5 text-[#006A4E]" />
                   <span>
                     {lang === 'bn'
                       ? 'মালিক অনুমোদিত অ্যাক্সেস কোড:'
                       : 'Owner Authorization Passcode:'}
                   </span>
-                  <code className="font-mono-tabular font-bold text-[#14532D] bg-white px-2 py-0.5 rounded border border-[#D6CEBE]">
+                  <code className="font-mono-tabular font-bold text-[#006A4E] bg-white px-2 py-0.5 rounded border border-[#CBD5E1]">
                     {ownerPermissionCode}
                   </code>
                 </p>
-                <p className="text-xs text-[#57534E]">
+                <p className="text-xs text-[#475569]">
                   {lang === 'bn'
                     ? 'কঠোর অনুমতি লক চালু থাকলে শুধুমাত্র এই কোড অথবা মালিকের ইমেইল দ্বারা ফর্ম দাখিল করা যাবে।'
                     : 'When Strict Permission Lock is enabled, users must enter this owner passcode to submit or modify records.'}
@@ -284,7 +284,7 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
                     setCopiedCode(true);
                     setTimeout(() => setCopiedCode(false), 2000);
                   }}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-white border border-[#D6CEBE] rounded-lg hover:bg-[#EBE6DF] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-white border border-[#CBD5E1] rounded-lg hover:bg-[#E2E8F0] transition-colors cursor-pointer"
                 >
                   <Copy className="w-3.5 h-3.5" />
                   <span>
@@ -304,8 +304,8 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
                   onClick={() => onToggleRequireOwnerPermission(!requireOwnerPermission)}
                   className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
                     requireOwnerPermission
-                      ? 'bg-[#14532D] text-white hover:bg-[#0F3F22]'
-                      : 'bg-[#9A3412] text-white hover:bg-[#7C2D12]'
+                      ? 'bg-[#006A4E] text-white hover:bg-[#00523C]'
+                      : 'bg-[#C8102E] text-white hover:bg-[#991B1B]'
                   }`}
                 >
                   {requireOwnerPermission ? (
@@ -335,14 +335,14 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
           {/* Section 2: Detailed Feature Explanation (Single-Language or Bilingual Side-by-Side) */}
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-base sm:text-lg font-serif-display font-bold text-[#1C1917]">
+              <h3 className="text-base sm:text-lg font-serif-display font-bold text-[#0F172A]">
                 {showBilingualDualView
                   ? 'বিস্তারিত বৈশিষ্ট্যসমূহ (বাংলা ও English Feature Explanation)'
                   : lang === 'bn'
                   ? 'বাংলা অভিযোগ কেন্দ্রের সম্পূর্ণ বৈশিষ্ট্য ও সুবিধাসমূহ'
                   : 'Complete Features & Security Capabilities of Bangla Obijog Kendro'}
               </h3>
-              <span className="text-xs font-mono-tabular text-[#14532D] font-semibold">
+              <span className="text-xs font-mono-tabular text-[#006A4E] font-semibold">
                 {lang === 'bn'
                   ? `মোট ${toBengaliDigits(features.length)}টি প্রধান বৈশিষ্ট্য`
                   : `${features.length} Core Modules`}
@@ -353,38 +353,38 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
               {features.map((feat) => (
                 <div
                   key={feat.numEn}
-                  className="p-4 bg-white border border-[#E2DCD3] rounded-xl space-y-2"
+                  className="p-4 bg-white border border-[#CBD5E1] rounded-xl space-y-2"
                 >
-                  <div className="flex items-center justify-between text-xs font-mono-tabular font-bold text-[#14532D]">
+                  <div className="flex items-center justify-between text-xs font-mono-tabular font-bold text-[#006A4E]">
                     <span>{lang === 'bn' ? `বৈশিষ্ট্য ${feat.numBn}` : `MODULE ${feat.numEn}`}</span>
-                    <CheckCircle2 className="w-4 h-4 text-[#14532D]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#006A4E]" />
                   </div>
 
                   {showBilingualDualView ? (
                     <div className="space-y-2">
                       <div>
-                        <h4 className="text-sm font-serif-display font-bold text-[#1C1917]">
+                        <h4 className="text-sm font-serif-display font-bold text-[#0F172A]">
                           {feat.titleBn}
                         </h4>
-                        <p className="text-xs text-[#44403C] leading-relaxed mt-0.5">
+                        <p className="text-xs text-[#334155] leading-relaxed mt-0.5">
                           {feat.descBn}
                         </p>
                       </div>
-                      <div className="pt-2 border-t border-[#EBE6DF]">
-                        <h4 className="text-sm font-serif-display font-bold text-[#14532D]">
+                      <div className="pt-2 border-t border-[#E2E8F0]">
+                        <h4 className="text-sm font-serif-display font-bold text-[#006A4E]">
                           {feat.titleEn}
                         </h4>
-                        <p className="text-xs text-[#57534E] leading-relaxed mt-0.5">
+                        <p className="text-xs text-[#475569] leading-relaxed mt-0.5">
                           {feat.descEn}
                         </p>
                       </div>
                     </div>
                   ) : (
                     <div>
-                      <h4 className="text-sm font-serif-display font-bold text-[#1C1917]">
+                      <h4 className="text-sm font-serif-display font-bold text-[#0F172A]">
                         {lang === 'bn' ? feat.titleBn : feat.titleEn}
                       </h4>
-                      <p className="text-xs text-[#44403C] leading-relaxed mt-1">
+                      <p className="text-xs text-[#334155] leading-relaxed mt-1">
                         {lang === 'bn' ? feat.descBn : feat.descEn}
                       </p>
                     </div>
@@ -395,34 +395,34 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
           </div>
 
           {/* Section 3: Ready-to-Copy Name & Description Text (GitHub & Test Submission) */}
-          <div className="p-5 bg-white border border-[#E2DCD3] rounded-xl space-y-3">
-            <h3 className="text-sm font-serif-display font-bold text-[#14532D]">
+          <div className="p-5 bg-white border border-[#CBD5E1] rounded-xl space-y-3">
+            <h3 className="text-sm font-serif-display font-bold text-[#006A4E]">
               {lang === 'bn'
                 ? 'কপি করার জন্য প্রস্তুত নাম ও বিবরণ (গিটহাব ও টেস্ট টেক্সট)'
                 : 'Ready-to-Copy Project Name & Description Text (GitHub & Test)'}
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-              <div className="p-3 bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg space-y-1.5">
-                <span className="font-semibold text-[#57534E] block">
+              <div className="p-3 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg space-y-1.5">
+                <span className="font-semibold text-[#475569] block">
                   {lang === 'bn'
                     ? 'প্রকল্প ও রিপোজিটরির নাম (Name):'
                     : 'Project & Repository Name:'}
                 </span>
-                <p className="font-mono-tabular font-bold text-[#1C1917] select-all">
+                <p className="font-mono-tabular font-bold text-[#0F172A] select-all">
                   {lang === 'bn'
                     ? 'বাংলা অভিযোগ কেন্দ্র (bangla-obijog-kendro)'
                     : 'Bangla Obijog Kendro (bangla-obijog-kendro)'}
                 </p>
               </div>
 
-              <div className="p-3 bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg space-y-1.5">
-                <span className="font-semibold text-[#57534E] block">
+              <div className="p-3 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg space-y-1.5">
+                <span className="font-semibold text-[#475569] block">
                   {lang === 'bn'
                     ? 'টেস্ট অভিযোগকারীর নাম ও বয়স:'
                     : 'Test Complainant Name & Age:'}
                 </span>
-                <p className="font-semibold text-[#1C1917] select-all">
+                <p className="font-semibold text-[#0F172A] select-all">
                   {lang === 'bn'
                     ? 'নাম: সচেতন নাগরিক ৭০৪ · বয়স: ২৯ বছর'
                     : 'Name: Citizen Observer #704 · Age: 29 Years'}
@@ -430,11 +430,11 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
               </div>
             </div>
 
-            <div className="p-3 bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg space-y-1.5 text-xs">
-              <span className="font-semibold text-[#57534E] block">
+            <div className="p-3 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg space-y-1.5 text-xs">
+              <span className="font-semibold text-[#475569] block">
                 {lang === 'bn' ? 'সংক্ষিপ্ত বিবরণ (Description):' : 'Short Description:'}
               </span>
-              <p className="text-[#1C1917] leading-relaxed select-all">
+              <p className="text-[#0F172A] leading-relaxed select-all">
                 {lang === 'bn'
                   ? 'বাংলা অভিযোগ কেন্দ্র হলো একটি ক্রিপ্টোগ্রাফিক জাতীয় জনঅভিযোগ ও নিয়ন্ত্রক যাচাই বাতায়ন, যেখানে নাগরিকরা মেয়াদোত্তীর্ণ ঔষধ, ভেজাল খাদ্য, অতিরিক্ত মূল্য ও দেশের যেকোনো জনসমস্যার বিরুদ্ধে ছবি, ভিডিও, বয়স ও বিস্তারিত বিবরণসহ অভিযোগ দাখিল করতে পারেন এবং র‍্যান্ডম অনন্য ট্র্যাকিং নম্বরের মাধ্যমে অগ্রগতি ট্র্যাক করতে পারেন। (মালিকানা সংরক্ষিত: mdshabbirmia516@gmail.com)'
                   : 'Bangla Obijog Kendro is a cryptographic national public objection and regulatory verification portal where citizens can submit any problem—expired medicine, unsafe food, price gouging, or public hazards—with photo/video evidence, reporter age, and full details, and track authority verification via a random unique Tracking Number. (Owned by: mdshabbirmia516@gmail.com)'}
@@ -443,9 +443,9 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
           </div>
 
           {/* Section 4: Quick Action Footer */}
-          <div className="p-4 bg-[#F3EFE6] border border-[#D6CEBE] rounded-xl flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-2.5 text-xs text-[#1C1917]">
-              <FileText className="w-4 h-4 text-[#14532D] shrink-0" />
+          <div className="p-4 bg-[#F1F5F9] border border-[#CBD5E1] rounded-xl flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-2.5 text-xs text-[#0F172A]">
+              <FileText className="w-4 h-4 text-[#006A4E] shrink-0" />
               <span>
                 {lang === 'bn'
                   ? 'গিটহাব রিপোজিটরির জন্য সম্পূর্ণ দ্বিভাষিক (বাংলা ও ইংরেজি) README.md ফাইল যুক্ত করা হয়েছে।'
@@ -460,7 +460,7 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
                   onClose();
                   onNavigateToSubmit();
                 }}
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-[#14532D] rounded-lg hover:bg-[#0F3F22] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-[#006A4E] rounded-lg hover:bg-[#00523C] transition-colors cursor-pointer"
               >
                 <Camera className="w-3.5 h-3.5" />
                 <span>
@@ -472,7 +472,7 @@ export const FeatureAndPermissionModal: React.FC<FeatureAndPermissionModalProps>
               <button
                 type="button"
                 onClick={onClose}
-                className="px-3.5 py-2 text-xs font-semibold text-[#1C1917] bg-white border border-[#D6CEBE] rounded-lg hover:bg-[#EBE6DF] transition-colors cursor-pointer"
+                className="px-3.5 py-2 text-xs font-semibold text-[#0F172A] bg-white border border-[#CBD5E1] rounded-lg hover:bg-[#E2E8F0] transition-colors cursor-pointer"
               >
                 {lang === 'bn' ? 'বন্ধ করুন' : 'Close'}
               </button>

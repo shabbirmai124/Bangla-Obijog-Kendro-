@@ -193,21 +193,21 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
       className="max-w-[1360px] mx-auto px-6 py-12"
     >
       {/* Header & Lookup Input */}
-      <div className="pb-8 border-b border-[#E2DCD3]">
-        <p className="text-xs uppercase tracking-widest text-[#14532D] font-semibold">
+      <div className="pb-8 border-b border-[#CBD5E1]">
+        <p className="text-xs uppercase tracking-widest text-[#006A4E] font-semibold">
           {lang === 'bn'
             ? '০৩. অভিযোগ ট্র্যাকিং ও ক্রিপ্টোগ্রাফিক অডিট'
             : '03. END-TO-END DOSSIER TRACKING & CRYPTOGRAPHIC AUDIT'}
         </p>
         <h2
           id="tracking-portal-heading"
-          className="mt-1 text-2xl sm:text-3xl font-serif-display font-semibold text-[#1C1917]"
+          className="mt-1 text-2xl sm:text-3xl font-serif-display font-semibold text-[#0F172A]"
         >
           {lang === 'bn'
             ? 'অনন্য ট্র্যাকিং নম্বর দিয়ে অভিযোগের অগ্রগতি জানুন'
             : 'Track Objection Status by Unique Tracking Number'}
         </h2>
-        <p className="mt-2 text-sm text-[#57534E] max-w-2xl">
+        <p className="mt-2 text-sm text-[#475569] max-w-2xl">
           {lang === 'bn'
             ? 'আপনার প্রাপ্ত ট্র্যাকিং নম্বর প্রদান করে তদন্তের বর্তমান ধাপ, ডিজিটাল সিল যাচাই এবং সরকারি পরিদর্শকের প্রতিবেদন দেখুন।'
             : 'Enter any OBJ-2026-XXXXXX Tracking ID to inspect live regulatory verification progress, verify the SHA-256 integrity seal, and view official inspector findings.'}
@@ -218,7 +218,7 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
           className="mt-6 max-w-2xl flex flex-col sm:flex-row items-stretch sm:items-center gap-3"
         >
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-[#78716C] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#64748B] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               aria-label="Tracking ID Lookup Input"
@@ -229,19 +229,19 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                   ? 'ট্র্যাকিং নম্বর লিখুন (যেমন: OBJ-2026-849201)'
                   : 'Enter Tracking ID (e.g. OBJ-2026-849201)'
               }
-              className="w-full pl-10 pr-4 py-2.5 text-sm font-mono-tabular bg-white border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+              className="w-full pl-10 pr-4 py-2.5 text-sm font-mono-tabular bg-white border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
             />
           </div>
           <button
             type="submit"
-            className="px-5 py-2.5 text-xs font-semibold text-white bg-[#14532D] rounded-lg hover:bg-[#0F3F22] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+            className="px-5 py-2.5 text-xs font-semibold text-white bg-[#006A4E] rounded-lg hover:bg-[#00523C] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
           >
             {lang === 'bn' ? 'অভিযোগ ট্র্যাক করুন' : 'Track Dossier'}
           </button>
         </form>
 
         {/* Quick-Select Active Tracking Numbers */}
-        <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-[#57534E]">
+        <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-[#475569]">
           <span>{lang === 'bn' ? 'সক্রিয় ট্র্যাকিং নম্বরসমূহ:' : 'Active Dossiers in Ledger:'}</span>
           {objections.slice(0, 6).map((obj, idx) => (
             <React.Fragment key={obj.id}>
@@ -255,8 +255,8 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                 }}
                 className={`font-mono-tabular transition-colors cursor-pointer ${
                   activeCode.toUpperCase() === obj.trackingId
-                    ? 'text-[#14532D] font-bold underline underline-offset-4'
-                    : 'text-[#44403C] hover:text-[#14532D]'
+                    ? 'text-[#006A4E] font-bold underline underline-offset-4'
+                    : 'text-[#334155] hover:text-[#006A4E]'
                 }`}
               >
                 {obj.trackingId}
@@ -268,8 +268,8 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
 
       {/* Lookup Results */}
       {!matchedDossier || !rawMatchedDossier ? (
-        <div className="mt-8 p-10 bg-white border border-[#E2DCD3] rounded-xl text-center">
-          <p className="font-serif-display text-lg text-[#1C1917]">
+        <div className="mt-8 p-10 bg-white border border-[#CBD5E1] rounded-xl text-center">
+          <p className="font-serif-display text-lg text-[#0F172A]">
             {lang === 'bn'
               ? `"${activeCode}" ট্র্যাকিং নম্বরের কোনো অভিযোগ পাওয়া যায়নি।`
               : `No dossier found matching Tracking Number “${activeCode}”`}
@@ -278,15 +278,15 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
       ) : (
         <div className="mt-8 space-y-8" data-testid="tracked-dossier-view">
           {/* Top Dossier Identity & Status Banner */}
-          <div className="bg-white border border-[#E2DCD3] rounded-xl p-6 sm:p-8">
-            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-[#EBE6DF]">
+          <div className="bg-white border border-[#CBD5E1] rounded-xl p-6 sm:p-8">
+            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-[#E2E8F0]">
               <div>
-                <div className="flex flex-wrap items-center gap-2 text-xs text-[#57534E]">
-                  <span className="font-mono-tabular font-bold text-[#14532D] text-sm">
+                <div className="flex flex-wrap items-center gap-2 text-xs text-[#475569]">
+                  <span className="font-mono-tabular font-bold text-[#006A4E] text-sm">
                     {matchedDossier.trackingId}
                   </span>
                   <span aria-hidden="true">·</span>
-                  <span className="font-medium text-[#1C1917]">
+                  <span className="font-medium text-[#0F172A]">
                     {catLabels[matchedDossier.category]}
                   </span>
                   <span aria-hidden="true">·</span>
@@ -298,23 +298,23 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                   <span aria-hidden="true">·</span>
                   <span>{severityLabels[matchedDossier.severity]}</span>
                 </div>
-                <h3 className="mt-2 text-2xl font-serif-display font-semibold text-[#1C1917]">
+                <h3 className="mt-2 text-2xl font-serif-display font-semibold text-[#0F172A]">
                   {matchedDossier.title}
                 </h3>
-                <p className="mt-1 text-xs text-[#57534E]">
+                <p className="mt-1 text-xs text-[#475569]">
                   {lang === 'bn' ? 'প্রতিষ্ঠান:' : 'Establishment:'}{' '}
-                  <strong className="text-[#1C1917]">{matchedDossier.establishmentName}</strong> ·{' '}
+                  <strong className="text-[#0F172A]">{matchedDossier.establishmentName}</strong> ·{' '}
                   {lang === 'bn' ? 'এলাকা:' : 'Jurisdiction:'}{' '}
-                  <strong className="text-[#1C1917]">{matchedDossier.jurisdiction}</strong> ·{' '}
+                  <strong className="text-[#0F172A]">{matchedDossier.jurisdiction}</strong> ·{' '}
                   {lang === 'bn' ? 'ব্যাচ নম্বর:' : 'Batch/Lot:'}{' '}
-                  <span className="font-mono-tabular text-[#1C1917]">
+                  <span className="font-mono-tabular text-[#0F172A]">
                     {matchedDossier.batchNumber}
                   </span>
                   {matchedDossier.expiryDate && (
                     <>
                       {' '}
                       · {lang === 'bn' ? 'মুদ্রিত মেয়াদ:' : 'Stamped Expiry:'}{' '}
-                      <span className="font-mono-tabular text-[#9A3412] font-semibold">
+                      <span className="font-mono-tabular text-[#C8102E] font-semibold">
                         {matchedDossier.expiryDate} (
                         {formatLocalizedExpiryStatus(
                           calculateExpiryAnalysis(
@@ -331,12 +331,12 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
               </div>
 
               <div className="flex flex-col sm:items-end gap-2 shrink-0">
-                <span className="text-xs uppercase tracking-wider text-[#57534E]">
+                <span className="text-xs uppercase tracking-wider text-[#475569]">
                   {lang === 'bn' ? 'বর্তমান যাচাই অবস্থা' : 'Current Verification Status'}
                 </span>
                 <span
                   data-testid="tracked-status-label"
-                  className="text-sm font-semibold text-[#1C1917] bg-[#F3EFE6] px-3.5 py-1.5 rounded-md border border-[#D6CEBE]"
+                  className="text-sm font-semibold text-[#006A4E] bg-[#ECFDF5] px-3.5 py-1.5 rounded-md border border-[#006A4E]/30"
                 >
                   {statusLabels[matchedDossier.status]}
                 </span>
@@ -344,7 +344,7 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                   type="button"
                   onClick={() => onJumpToAuthorityDesk(matchedDossier.id)}
                   aria-label="Update Status in Authority Desk"
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-[#14532D] hover:underline mt-1 cursor-pointer"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-[#006A4E] hover:underline mt-1 cursor-pointer"
                 >
                   <span>
                     {lang === 'bn'
@@ -358,7 +358,7 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
 
             {/* 5-Stage Verification Progress Pipeline */}
             <div className="mt-6">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#57534E] mb-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[#475569] mb-4">
                 {lang === 'bn'
                   ? 'সরকারি তদন্ত ও নিষ্পত্তি ধাপসমূহ'
                   : 'Regulatory Verification Lifecycle'}
@@ -373,10 +373,10 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                       key={step.status}
                       className={`p-3.5 rounded-lg border transition-colors ${
                         isCurrent
-                          ? 'bg-[#F3EFE6] border-[#14532D] text-[#1C1917]'
+                          ? 'bg-[#ECFDF5] border-[#006A4E] text-[#0F172A]'
                           : isCompleted
-                          ? 'bg-[#FBF9F5] border-[#D6CEBE] text-[#1C1917]'
-                          : 'bg-white border-[#EBE6DF] text-[#78716C]'
+                          ? 'bg-[#F8FAFC] border-[#CBD5E1] text-[#0F172A]'
+                          : 'bg-white border-[#E2E8F0] text-[#64748B]'
                       }`}
                     >
                       <div className="flex items-center justify-between text-xs font-mono-tabular mb-1">
@@ -384,12 +384,12 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                           {lang === 'bn' ? step.labelBn : step.labelEn}
                         </span>
                         {isCompleted ? (
-                          <CheckCircle2 className="w-4 h-4 text-[#14532D] shrink-0" />
+                          <CheckCircle2 className="w-4 h-4 text-[#006A4E] shrink-0" />
                         ) : (
-                          <Clock className="w-3.5 h-3.5 text-[#A8A29E] shrink-0" />
+                          <Clock className="w-3.5 h-3.5 text-[#94A3B8] shrink-0" />
                         )}
                       </div>
-                      <p className="text-xs leading-snug text-[#57534E]">
+                      <p className="text-xs leading-snug text-[#475569]">
                         {lang === 'bn' ? step.descBn : step.descEn}
                       </p>
                     </li>
@@ -403,13 +403,13 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-7 space-y-6">
               {/* Factual Statement & Attached Media */}
-              <div className="bg-white border border-[#E2DCD3] rounded-xl p-6 space-y-4">
-                <h4 className="text-base font-serif-display font-semibold text-[#1C1917]">
+              <div className="bg-white border border-[#CBD5E1] rounded-xl p-6 space-y-4">
+                <h4 className="text-base font-serif-display font-semibold text-[#0F172A]">
                   {lang === 'bn'
                     ? 'দাখিলকৃত অভিযোগের বিবরণ ও ছবি/ভিডিও প্রমাণ'
                     : 'Submitted Evidentiary Statement & Media'}
                 </h4>
-                <p className="text-sm text-[#44403C] leading-relaxed whitespace-pre-line">
+                <p className="text-sm text-[#334155] leading-relaxed whitespace-pre-line">
                   {matchedDossier.description}
                 </p>
                 <EvidenceMediaViewer
@@ -423,15 +423,15 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
               </div>
 
               {/* Official Regulatory Authority Verification Box */}
-              <div className="bg-white border border-[#E2DCD3] rounded-xl p-6 space-y-3">
+              <div className="bg-white border border-[#CBD5E1] rounded-xl p-6 space-y-3">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-base font-serif-display font-semibold text-[#1C1917]">
+                  <h4 className="text-base font-serif-display font-semibold text-[#0F172A]">
                     {lang === 'bn'
                       ? 'সরকারি পরিদর্শক ও ভ্রাম্যমাণ আদালতের আদেশ'
                       : 'Official Regulatory Authority Findings & Directives'}
                   </h4>
                   {matchedDossier.authorityBadgeId && (
-                    <span className="text-xs font-mono-tabular text-[#14532D] font-semibold">
+                    <span className="text-xs font-mono-tabular text-[#006A4E] font-semibold">
                       {lang === 'bn' ? 'যাচাইকারী ব্যাজ:' : 'Verified by'}{' '}
                       {matchedDossier.authorityBadgeId}
                     </span>
@@ -441,32 +441,32 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                 {matchedDossier.authorityNote || matchedDossier.enforcementAction ? (
                   <div className="space-y-3 text-sm">
                     {matchedDossier.authorityNote && (
-                      <div className="p-4 bg-[#FBF9F5] border border-[#E2DCD3] rounded-lg">
-                        <p className="text-xs font-semibold text-[#57534E] uppercase tracking-wider mb-1">
+                      <div className="p-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg">
+                        <p className="text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1">
                           {lang === 'bn'
                             ? 'ল্যাবরেটরি ও মাঠ পরিদর্শন প্রতিবেদন'
                             : 'Inspectorate & Laboratory Verification Report'}
                         </p>
-                        <p className="text-[#1C1917] leading-relaxed">
+                        <p className="text-[#0F172A] leading-relaxed">
                           {matchedDossier.authorityNote}
                         </p>
                       </div>
                     )}
                     {matchedDossier.enforcementAction && (
-                      <div className="p-4 bg-[#F3EFE6] border border-[#14532D]/30 rounded-lg">
-                        <p className="text-xs font-semibold text-[#14532D] uppercase tracking-wider mb-1">
+                      <div className="p-4 bg-[#ECFDF5] border border-[#006A4E]/30 rounded-lg">
+                        <p className="text-xs font-semibold text-[#006A4E] uppercase tracking-wider mb-1">
                           {lang === 'bn'
                             ? 'গৃহীত আইনানুগ ব্যবস্থা ও জব্দ আদেশ'
                             : 'Official Enforcement Action / Recall Directive'}
                         </p>
-                        <p className="text-[#1C1917] font-medium">
+                        <p className="text-[#0F172A] font-medium">
                           {matchedDossier.enforcementAction}
                         </p>
                       </div>
                     )}
                   </div>
                 ) : (
-                  <p className="text-xs text-[#57534E] bg-[#FBF9F5] p-4 rounded-lg border border-[#EBE6DF]">
+                  <p className="text-xs text-[#475569] bg-[#F8FAFC] p-4 rounded-lg border border-[#E2E8F0]">
                     {lang === 'bn'
                       ? 'এই অভিযোগটি বর্তমানে সংশ্লিষ্ট অধিদপ্তরের মাঠ পরিদর্শকের তদন্তের অপেক্ষায় রয়েছে।'
                       : 'This dossier is currently queued for field inspectorate verification.'}
@@ -478,10 +478,10 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
               {matchedDossier.status !== 'resolved' && matchedDossier.status !== 'dismissed' && (
                 <form
                   onSubmit={handleAppendCitizenNote}
-                  className="bg-white border border-[#E2DCD3] rounded-xl p-6 space-y-3"
+                  className="bg-white border border-[#CBD5E1] rounded-xl p-6 space-y-3"
                 >
-                  <h4 className="text-sm font-semibold text-[#1C1917] flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-[#14532D]" />
+                  <h4 className="text-sm font-semibold text-[#0F172A] flex items-center gap-2">
+                    <FileText className="w-4 h-4 text-[#006A4E]" />
                     <span>
                       {lang === 'bn'
                         ? 'অতিরিক্ত নাগরিক তথ্য বা প্রমাণ সংযোজন করুন'
@@ -497,11 +497,11 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                         ? 'অতিরিক্ত ব্যাচ তথ্য বা দোকানের প্রতিক্রিয়া লিখুন...'
                         : 'Add supplementary batch observation or store response...'
                     }
-                    className="w-full px-3 py-2 text-xs bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917]"
+                    className="w-full px-3 py-2 text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A]"
                   />
                   <div className="flex items-center justify-between">
                     {noteSavedBanner ? (
-                      <span className="text-xs text-[#14532D] font-medium">
+                      <span className="text-xs text-[#006A4E] font-medium">
                         {lang === 'bn'
                           ? 'অতিরিক্ত তথ্য যুক্ত হয়েছে এবং ডিজিটাল হ্যাশ পুনরায় সিল করা হয়েছে।'
                           : 'Supplementary evidence appended and SHA-256 re-anchored.'}
@@ -511,7 +511,7 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                     )}
                     <button
                       type="submit"
-                      className="px-4 py-2 text-xs font-semibold text-white bg-[#14532D] rounded-lg hover:bg-[#0F3F22] transition-colors cursor-pointer"
+                      className="px-4 py-2 text-xs font-semibold text-white bg-[#006A4E] rounded-lg hover:bg-[#00523C] transition-colors cursor-pointer"
                     >
                       {lang === 'bn' ? 'নথিতে যুক্ত করুন' : 'Append to Dossier'}
                     </button>
@@ -523,43 +523,43 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
             {/* Right 5 Columns: Cryptographic SHA-256 Verification, AES-256-GCM Decryption, & Chain of Custody */}
             <div className="lg:col-span-5 space-y-6">
               {/* Live SHA-256 Integrity Verification Card */}
-              <div className="bg-[#1C1917] text-[#FBF9F5] p-6 rounded-xl space-y-4">
+              <div className="bg-white border-2 border-[#006A4E] text-[#0F172A] p-6 rounded-xl space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono-tabular uppercase tracking-wider text-emerald-300">
+                  <span className="text-xs font-mono-tabular font-semibold uppercase tracking-wider text-[#006A4E]">
                     {lang === 'bn'
                       ? 'ডিজিটাল ক্রিপ্টোগ্রাফিক অডিট · বাংলা অভিযোগ কেন্দ্র'
                       : 'SHA-256 CRYPTOGRAPHIC AUDIT · BANGLA OBIJOG KENDRO'}
                   </span>
                   {integrityResult?.valid !== false ? (
-                    <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                    <ShieldCheck className="w-5 h-5 text-[#006A4E]" />
                   ) : (
-                    <ShieldAlert className="w-5 h-5 text-rose-400" />
+                    <ShieldAlert className="w-5 h-5 text-[#C8102E]" />
                   )}
                 </div>
 
-                <div className="space-y-2 text-xs font-mono-tabular">
-                  <div>
-                    <span className="text-stone-400 block">
+                <div className="space-y-2.5 text-xs font-mono-tabular">
+                  <div className="bg-[#F8FAFC] p-3 rounded-lg border border-[#CBD5E1]">
+                    <span className="text-[#475569] block mb-0.5">
                       {lang === 'bn' ? 'সংরক্ষিত লেজার হ্যাশ:' : 'STORED LEDGER DIGEST:'}
                     </span>
-                    <span className="text-emerald-300 break-all">{matchedDossier.sha256Hash}</span>
+                    <span className="text-[#0F172A] font-medium break-all">{matchedDossier.sha256Hash}</span>
                   </div>
                   {integrityResult && (
-                    <div>
-                      <span className="text-stone-400 block">
+                    <div className="bg-[#ECFDF5] p-3 rounded-lg border border-[#A7F3D0]">
+                      <span className="text-[#065F46] block mb-0.5">
                         {lang === 'bn'
                           ? `তাৎক্ষণিক পুনঃগণনাকৃত হ্যাশ (${integrityResult.checkedAt}):`
                           : `LIVE RECOMPUTED WEB CRYPTO DIGEST (${integrityResult.checkedAt}):`}
                       </span>
-                      <span className="text-emerald-200 break-all">
+                      <span className="text-[#006A4E] font-semibold break-all">
                         {integrityResult.computedHash}
                       </span>
                     </div>
                   )}
                 </div>
 
-                <div className="pt-2 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-xs text-emerald-300 font-medium">
+                <div className="pt-3 border-t border-[#CBD5E1] flex items-center justify-between gap-2">
+                  <span className="text-xs text-[#006A4E] font-semibold">
                     {integrityResult?.valid
                       ? lang === 'bn'
                         ? 'যাচাইকৃত: দাখিলের পর কোনো তথ্য পরিবর্তন হয়নি'
@@ -578,7 +578,7 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                         checkedAt: new Date().toISOString().slice(11, 19) + ' UTC',
                       });
                     }}
-                    className="px-3 py-1.5 text-xs font-semibold bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors cursor-pointer"
+                    className="px-3 py-1.5 text-xs font-semibold bg-[#006A4E] hover:bg-[#00523C] text-white rounded-md transition-colors cursor-pointer shrink-0"
                   >
                     {lang === 'bn' ? 'হ্যাশ পুনরায় যাচাই' : 'Re-Verify Hash'}
                   </button>
@@ -586,17 +586,17 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
               </div>
 
               {/* AES-256-GCM Confidential Whistleblower Decryption Console */}
-              <div className="bg-white border border-[#E2DCD3] rounded-xl p-6 space-y-4">
+              <div className="bg-white border border-[#CBD5E1] rounded-xl p-6 space-y-4">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-sm font-semibold text-[#1C1917] flex items-center gap-2">
-                    <Lock className="w-4 h-4 text-[#14532D]" />
+                  <h4 className="text-sm font-semibold text-[#0F172A] flex items-center gap-2">
+                    <Lock className="w-4 h-4 text-[#006A4E]" />
                     <span>
                       {lang === 'bn'
                         ? 'এনক্রিপ্টেড গোপনীয় তথ্যভান্ডার'
                         : 'AES-256-GCM Encrypted Whistleblower Payload'}
                     </span>
                   </h4>
-                  <span className="text-xs font-mono-tabular text-[#57534E]">
+                  <span className="text-xs font-mono-tabular text-[#475569]">
                     {matchedDossier.isEncrypted
                       ? lang === 'bn'
                         ? 'সাইফারটেক্সট সিলযুক্ত'
@@ -609,8 +609,8 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
 
                 {matchedDossier.isEncrypted ? (
                   <div className="space-y-3">
-                    <div className="p-3 bg-[#FBF9F5] border border-[#E2DCD3] rounded-lg text-xs font-mono-tabular text-[#57534E] break-all">
-                      <span className="block text-[11px] text-[#78716C] mb-1">
+                    <div className="p-3 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-xs font-mono-tabular text-[#475569] break-all">
+                      <span className="block text-[11px] text-[#64748B] mb-1">
                         IV: {matchedDossier.encryptionIv} · PBKDF2-SHA256
                       </span>
                       {matchedDossier.encryptedPayload}
@@ -619,7 +619,7 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                     <div className="space-y-2">
                       <label
                         htmlFor="decrypt-passphrase-input"
-                        className="block text-xs font-semibold text-[#1C1917]"
+                        className="block text-xs font-semibold text-[#0F172A]"
                       >
                         {lang === 'bn'
                           ? 'ব্রাউজারে ডিক্রিপ্ট করতে গোপন পাসফ্রেজ দিন'
@@ -636,12 +636,12 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                               ? 'পাসফ্রেজ লিখুন (যেমন: AEGIS-INSPECT-2026)'
                               : 'Passphrase (Demo: AEGIS-INSPECT-2026)'
                           }
-                          className="flex-1 px-3 py-2 text-xs font-mono-tabular bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917]"
+                          className="flex-1 px-3 py-2 text-xs font-mono-tabular bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A]"
                         />
                         <button
                           type="button"
                           onClick={() => handleDecrypt()}
-                          className="px-3.5 py-2 text-xs font-semibold text-white bg-[#14532D] rounded-lg hover:bg-[#0F3F22] transition-colors shrink-0 cursor-pointer"
+                          className="px-3.5 py-2 text-xs font-semibold text-white bg-[#006A4E] rounded-lg hover:bg-[#00523C] transition-colors shrink-0 cursor-pointer"
                         >
                           {lang === 'bn' ? 'ডিক্রিপ্ট' : 'Decrypt'}
                         </button>
@@ -652,7 +652,7 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                           setPassphraseInput(DEMO_DECRYPTION_PASSPHRASE);
                           handleDecrypt(DEMO_DECRYPTION_PASSPHRASE);
                         }}
-                        className="text-xs text-[#14532D] font-semibold hover:underline font-mono-tabular cursor-pointer"
+                        className="text-xs text-[#006A4E] font-semibold hover:underline font-mono-tabular cursor-pointer"
                       >
                         {lang === 'bn'
                           ? `নমুনা পরিদর্শক কী ব্যবহার করুন (${DEMO_DECRYPTION_PASSPHRASE})`
@@ -665,13 +665,13 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                         data-testid="decrypted-payload-box"
                         className={`p-3.5 rounded-lg border text-xs ${
                           decryptionResult.success
-                            ? 'bg-[#F3EFE6] border-[#14532D] text-[#1C1917]'
+                            ? 'bg-[#ECFDF5] border-[#006A4E] text-[#0F172A]'
                             : 'bg-rose-50 border-rose-300 text-rose-900'
                         }`}
                       >
                         {decryptionResult.success ? (
                           <>
-                            <div className="flex items-center gap-1.5 font-semibold text-[#14532D] mb-1">
+                            <div className="flex items-center gap-1.5 font-semibold text-[#006A4E] mb-1">
                               <Unlock className="w-3.5 h-3.5" />
                               <span>
                                 {lang === 'bn'
@@ -688,7 +688,7 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
                     )}
                   </div>
                 ) : (
-                  <p className="text-xs text-[#57534E]">
+                  <p className="text-xs text-[#475569]">
                     {lang === 'bn'
                       ? 'এই অভিযোগে কোনো পৃথক এনক্রিপ্টেড গোপন নোট সংযুক্ত করা হয়নি।'
                       : 'This objection was filed as a full public statement without a separate encrypted whistleblower attachment.'}
@@ -697,21 +697,21 @@ export const TrackingPortalSection: React.FC<TrackingPortalSectionProps> = ({
               </div>
 
               {/* Chronological Chain-of-Custody Audit Trail */}
-              <div className="bg-white border border-[#E2DCD3] rounded-xl p-6 space-y-4">
-                <h4 className="text-sm font-semibold text-[#1C1917]">
+              <div className="bg-white border border-[#CBD5E1] rounded-xl p-6 space-y-4">
+                <h4 className="text-sm font-semibold text-[#0F172A]">
                   {lang === 'bn'
                     ? 'অপরিবর্তনীয় চেইন-অব-কাস্টডি অডিট লগ'
                     : 'Immutable Chain-of-Custody Audit Log'}
                 </h4>
-                <ol className="space-y-4 divide-y divide-[#EBE6DF]">
+                <ol className="space-y-4 divide-y divide-[#E2E8F0]">
                   {(matchedDossier.auditTrail || []).map((entry) => (
                     <li key={entry.id} className="pt-3 first:pt-0 text-xs">
-                      <div className="flex items-center justify-between text-[#57534E] font-mono-tabular">
+                      <div className="flex items-center justify-between text-[#475569] font-mono-tabular">
                         <span>{entry.actorLabel}</span>
                         <span>{entry.timestamp.slice(0, 16).replace('T', ' ')}</span>
                       </div>
-                      <p className="font-semibold text-[#1C1917] mt-1">{entry.actionTitle}</p>
-                      <p className="text-[#44403C] mt-0.5 leading-relaxed">{entry.detail}</p>
+                      <p className="font-semibold text-[#0F172A] mt-1">{entry.actionTitle}</p>
+                      <p className="text-[#334155] mt-0.5 leading-relaxed">{entry.detail}</p>
                     </li>
                   ))}
                 </ol>

@@ -576,7 +576,7 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen flex flex-col bg-[#FBF9F5] text-[#1C1917] ${
+      className={`min-h-screen flex flex-col bg-[#F8FAFC] text-[#0F172A] ${
         lang === 'bn' ? 'lang-bn' : 'lang-en'
       }`}
     >
@@ -586,17 +586,17 @@ export default function App() {
       {/* Always-Visible Global Government Utility, Permission & Language Switcher Bar */}
       <div
         data-testid="global-language-ribbon"
-        className="sticky top-[61px] z-20 border-b border-[#E2DCD3] bg-[#F3EFE6]/95 backdrop-blur-xs px-6 py-2"
+        className="sticky top-[63px] z-20 border-b border-[#CBD5E1] bg-[#F1F5F9]/95 backdrop-blur-xs px-6 py-2"
       >
-        <div className="max-w-[1360px] mx-auto flex flex-wrap items-center justify-between gap-3 text-xs text-[#57534E]">
+        <div className="max-w-[1360px] mx-auto flex flex-wrap items-center justify-between gap-3 text-xs text-[#475569]">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="font-semibold text-[#14532D]">{t.govHeaderBanner}</span>
+            <span className="font-semibold text-[#006A4E]">{t.govHeaderBanner}</span>
             <span aria-hidden="true" className="hidden md:inline">
               ·
             </span>
             <span className="hidden md:inline">{t.securityStandardLabel}</span>
             <span aria-hidden="true">·</span>
-            <span className="font-medium text-[#1C1917]">{t.helplineLabel}</span>
+            <span className="font-medium text-[#0F172A]">{t.helplineLabel}</span>
           </div>
 
           {/* Persistent Feature/Permission Guide Button & One-Click Language Switcher */}
@@ -605,7 +605,7 @@ export default function App() {
               type="button"
               data-testid="open-feature-guide-btn"
               onClick={() => setIsFeatureGuideOpen(true)}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold text-[#14532D] bg-white border border-[#14532D]/30 rounded-md hover:bg-[#EBE6DF] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold text-[#006A4E] bg-white border border-[#006A4E]/30 rounded-md hover:bg-[#ECFDF5] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
               <BookOpen className="w-3.5 h-3.5" />
               <span>
@@ -615,15 +615,15 @@ export default function App() {
               </span>
             </button>
 
-            <span className="hidden sm:inline font-medium text-[#1C1917]">
+            <span className="hidden sm:inline font-medium text-[#0F172A]">
               {t.langSwitchLabel}
             </span>
             <div
               role="group"
               aria-label="Global Language Switcher"
-              className="inline-flex items-center gap-1 p-0.5 bg-[#E2DCD3] rounded-md border border-[#D6CEBE]"
+              className="inline-flex items-center gap-1 p-0.5 bg-[#E2E8F0] rounded-md border border-[#CBD5E1]"
             >
-              <Globe className="w-3.5 h-3.5 text-[#14532D] ml-1.5 mr-0.5 shrink-0" />
+              <Globe className="w-3.5 h-3.5 text-[#006A4E] ml-1.5 mr-0.5 shrink-0" />
               <button
                 type="button"
                 data-testid="lang-btn-bn"
@@ -631,8 +631,8 @@ export default function App() {
                 aria-pressed={lang === 'bn'}
                 className={`px-3 py-1 text-xs font-semibold rounded transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                   lang === 'bn'
-                    ? 'bg-[#14532D] text-white shadow-xs'
-                    : 'text-[#1C1917] hover:bg-white/70'
+                    ? 'bg-[#006A4E] text-white shadow-xs'
+                    : 'text-[#0F172A] hover:bg-white/80'
                 }`}
               >
                 বাংলা
@@ -644,8 +644,8 @@ export default function App() {
                 aria-pressed={lang === 'en'}
                 className={`px-3 py-1 text-xs font-semibold rounded transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                   lang === 'en'
-                    ? 'bg-[#14532D] text-white shadow-xs'
-                    : 'text-[#1C1917] hover:bg-white/70'
+                    ? 'bg-[#006A4E] text-white shadow-xs'
+                    : 'text-[#0F172A] hover:bg-white/80'
                 }`}
               >
                 English
@@ -743,10 +743,10 @@ export default function App() {
       />
 
       {/* Official Government Portal Footer */}
-      <footer className="border-t border-[#E2DCD3] bg-[#F3EFE6] py-8 px-6 mt-16">
-        <div className="max-w-[1360px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[#57534E]">
+      <footer className="border-t-2 border-t-[#006A4E] bg-[#F1F5F9] py-8 px-6 mt-16">
+        <div className="max-w-[1360px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[#475569]">
           <div>
-            <p className="font-serif-display font-semibold text-[#14532D] text-sm">
+            <p className="font-serif-display font-semibold text-[#006A4E] text-sm">
               {lang === 'bn'
                 ? 'বাংলা অভিযোগ কেন্দ্র — জাতীয় জনঅভিযোগ ও নিয়ন্ত্রক যাচাই বাতায়ন'
                 : 'Bangla Obijog Kendro — National Public Grievance & Verification Portal'}
@@ -762,7 +762,7 @@ export default function App() {
             <button
               type="button"
               onClick={() => setIsFeatureGuideOpen(true)}
-              className="inline-flex items-center gap-1 font-semibold text-[#14532D] hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 font-semibold text-[#006A4E] hover:underline cursor-pointer"
             >
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>
@@ -774,35 +774,35 @@ export default function App() {
             <button
               type="button"
               onClick={() => handleChangeLang(lang === 'bn' ? 'en' : 'bn')}
-              className="font-semibold text-[#14532D] hover:underline cursor-pointer"
+              className="font-semibold text-[#006A4E] hover:underline cursor-pointer"
             >
               {lang === 'bn' ? 'English' : 'বাংলা'}
             </button>
             <button
               type="button"
               onClick={() => setActiveTab('registry')}
-              className="hover:text-[#1C1917] transition-colors cursor-pointer"
+              className="hover:text-[#0F172A] transition-colors cursor-pointer"
             >
               {lang === 'bn' ? 'জনসাধারণের নথি' : 'Public Registry'}
             </button>
             <button
               type="button"
               onClick={() => setActiveTab('submit')}
-              className="hover:text-[#1C1917] transition-colors cursor-pointer"
+              className="hover:text-[#0F172A] transition-colors cursor-pointer"
             >
               {lang === 'bn' ? 'অভিযোগ দাখিল' : 'File Objection'}
             </button>
             <button
               type="button"
               onClick={() => setActiveTab('track')}
-              className="hover:text-[#1C1917] transition-colors cursor-pointer"
+              className="hover:text-[#0F172A] transition-colors cursor-pointer"
             >
               {lang === 'bn' ? 'অভিযোগ ট্র্যাকিং' : 'Track Dossier'}
             </button>
             <button
               type="button"
               onClick={() => setActiveTab('authority')}
-              className="hover:text-[#1C1917] transition-colors cursor-pointer"
+              className="hover:text-[#0F172A] transition-colors cursor-pointer"
             >
               {lang === 'bn' ? 'কর্তৃপক্ষ ডেস্ক' : 'Authority Desk'}
             </button>

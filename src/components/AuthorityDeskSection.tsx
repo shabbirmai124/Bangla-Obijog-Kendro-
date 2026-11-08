@@ -218,22 +218,22 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
       className="max-w-[1360px] mx-auto px-6 py-12"
     >
       {/* Header & Inspector Credentials Bar */}
-      <div className="pb-6 border-b border-[#E2DCD3] flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+      <div className="pb-6 border-b border-[#CBD5E1] flex flex-col lg:flex-row lg:items-end justify-between gap-6">
         <div>
-          <p className="text-xs uppercase tracking-widest text-[#14532D] font-semibold">
+          <p className="text-xs uppercase tracking-widest text-[#006A4E] font-semibold">
             {lang === 'bn'
               ? '০৪. সরকারি কর্তৃপক্ষ ও ভ্রাম্যমাণ আদালত যাচাই ডেস্ক'
               : '04. REGULATORY AUTHORITY VERIFICATION & ENFORCEMENT CONSOLE'}
           </p>
           <h2
             id="authority-desk-heading"
-            className="mt-1 text-2xl sm:text-3xl font-serif-display font-semibold text-[#1C1917]"
+            className="mt-1 text-2xl sm:text-3xl font-serif-display font-semibold text-[#0F172A]"
           >
             {lang === 'bn'
               ? 'সরকারি পরিদর্শক যাচাই, ল্যাব অ্যাস ও অবস্থা আপডেট কনসোল'
               : 'Authority Inspection, Batch Assay & Status Updates'}
           </h2>
-          <p className="mt-2 text-sm text-[#57534E] max-w-2xl">
+          <p className="mt-2 text-sm text-[#475569] max-w-2xl">
             {lang === 'bn'
               ? 'ঔষধ প্রশাসন, নিরাপদ খাদ্য কর্তৃপক্ষ, বিএসটিআই এবং ভোক্তা অধিকার সংরক্ষণ অধিদপ্তরের কর্মকর্তাগণ এখান থেকে অভিযোগের প্রমাণ যাচাই ও গৃহীত ব্যবস্থা আপডেট করেন।'
               : 'Accredited regulatory authorities verify citizen objections, validate SHA-256 evidence hashes, inspect expired medicine/food batches, and publish official enforcement updates.'}
@@ -241,11 +241,11 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
         </div>
 
         {/* Google Admin Auth & Inspector Credential Control */}
-        <div className="p-4 bg-white border border-[#D6CEBE] rounded-xl flex flex-wrap items-center gap-4">
+        <div className="p-4 bg-white border border-[#CBD5E1] rounded-xl flex flex-wrap items-center gap-4">
           <div className="flex items-center gap-2.5">
-            <UserCheck className="w-4 h-4 text-[#14532D]" />
+            <UserCheck className="w-4 h-4 text-[#006A4E]" />
             <div className="text-xs">
-              <p className="font-semibold text-[#1C1917]">
+              <p className="font-semibold text-[#0F172A]">
                 {currentUser
                   ? lang === 'bn'
                     ? `যাচাইকৃত কর্মকর্তা: ${currentUser.email}`
@@ -254,7 +254,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                   ? 'অনুমোদিত পরিদর্শক সেশন সক্রিয়'
                   : 'Accredited Inspector Session Active'}
               </p>
-              <p className="text-[#57534E]">
+              <p className="text-[#475569]">
                 {currentUser
                   ? lang === 'bn'
                     ? 'ক্লাউড ডাটাবেস ও লোকাল লেজার সিঙ্ক সক্রিয়'
@@ -270,7 +270,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
             <button
               type="button"
               onClick={onSignOut}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#1C1917] bg-[#EBE6DF] hover:bg-[#DFD8CE] rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#0F172A] bg-[#E2E8F0] hover:bg-[#CBD5E1] rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
               <LogOut className="w-3.5 h-3.5" />
               <span>{lang === 'bn' ? 'লগআউট' : 'Sign Out'}</span>
@@ -279,7 +279,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
             <button
               type="button"
               onClick={onSignInGoogle}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#14532D] border border-[#14532D]/30 hover:bg-[#14532D]/5 rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#006A4E] border border-[#006A4E]/30 hover:bg-[#ECFDF5] rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
               <LogIn className="w-3.5 h-3.5" />
               <span>{lang === 'bn' ? 'সরকারি গুগল লগইন' : 'Google Authority Login'}</span>
@@ -291,19 +291,19 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
       {/* Main 12-Column Workspace */}
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left 4 Columns: Dossier Verification Queue */}
-        <div className="lg:col-span-4 bg-white border border-[#E2DCD3] rounded-xl overflow-hidden">
-          <div className="p-4 bg-[#F3EFE6] border-b border-[#E2DCD3] flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#1C1917]">
+        <div className="lg:col-span-4 bg-white border border-[#CBD5E1] rounded-xl overflow-hidden">
+          <div className="p-4 bg-[#F1F5F9] border-b border-[#CBD5E1] flex items-center justify-between">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#0F172A]">
               {lang === 'bn'
                 ? `যাচাই অপেক্ষমাণ তালিকা (${toBengaliDigits(objections.length)})`
                 : `Dossier Verification Queue (${objections.length})`}
             </span>
-            <span className="text-xs font-mono-tabular text-[#57534E]">
+            <span className="text-xs font-mono-tabular text-[#475569]">
               {lang === 'bn' ? 'নির্বাচন করুন' : 'Select to Verify'}
             </span>
           </div>
 
-          <div className="divide-y divide-[#EBE6DF] max-h-[680px] overflow-y-auto">
+          <div className="divide-y divide-[#E2E8F0] max-h-[680px] overflow-y-auto">
             {objections.map((rawItem) => {
               const item = getLocalizedDossier(rawItem, lang);
               const isSelected = activeDossier?.id === item.id;
@@ -316,24 +316,24 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                   onClick={() => onSelectObjectionId(item.id)}
                   aria-label={`Select dossier ${item.trackingId} for authority verification`}
                   className={`w-full text-left p-4 transition-colors cursor-pointer ${
-                    isSelected ? 'bg-[#F3EFE6]' : 'hover:bg-[#FBF9F5]'
+                    isSelected ? 'bg-[#ECFDF5]' : 'hover:bg-[#F8FAFC]'
                   }`}
                 >
                   <div className="flex items-center justify-between text-xs font-mono-tabular">
-                    <span className="font-bold text-[#14532D]">{item.trackingId}</span>
-                    <span className="text-[#57534E]">{statusLabels[item.status]}</span>
+                    <span className="font-bold text-[#006A4E]">{item.trackingId}</span>
+                    <span className="text-[#475569]">{statusLabels[item.status]}</span>
                   </div>
-                  <p className="mt-1 text-sm font-serif-display font-semibold text-[#1C1917] line-clamp-2">
+                  <p className="mt-1 text-sm font-serif-display font-semibold text-[#0F172A] line-clamp-2">
                     {item.title}
                   </p>
-                  <div className="mt-1.5 flex flex-wrap items-center gap-1.5 text-xs text-[#57534E]">
+                  <div className="mt-1.5 flex flex-wrap items-center gap-1.5 text-xs text-[#475569]">
                     <span>{catLabels[item.category]}</span>
                     <span aria-hidden="true">·</span>
                     <span className="font-mono-tabular">{item.batchNumber}</span>
                     {expInfo.isExpired && (
                       <>
                         <span aria-hidden="true">·</span>
-                        <span className="text-[#9A3412] font-semibold">{expText}</span>
+                        <span className="text-[#C8102E] font-semibold">{expText}</span>
                       </>
                     )}
                   </div>
@@ -350,7 +350,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
               <div
                 role="status"
                 data-testid="authority-update-banner"
-                className="p-4 bg-[#F3EFE6] border-2 border-[#14532D] rounded-xl flex items-center gap-3 text-xs font-semibold text-[#14532D]"
+                className="p-4 bg-[#ECFDF5] border-2 border-[#006A4E] rounded-xl flex items-center gap-3 text-xs font-semibold text-[#006A4E]"
               >
                 <CheckCircle2 className="w-4 h-4 shrink-0" />
                 <span>{updateSuccessBanner}</span>
@@ -358,11 +358,11 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
             )}
 
             {/* Dossier Evidentiary Summary Card */}
-            <div className="bg-white border border-[#E2DCD3] rounded-xl p-6 space-y-5">
-              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#EBE6DF] pb-4">
+            <div className="bg-white border border-[#CBD5E1] rounded-xl p-6 space-y-5">
+              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#E2E8F0] pb-4">
                 <div>
-                  <div className="flex flex-wrap items-center gap-2 text-xs text-[#57534E]">
-                    <span className="font-mono-tabular font-bold text-[#14532D] text-sm">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-[#475569]">
+                    <span className="font-mono-tabular font-bold text-[#006A4E] text-sm">
                       {activeDossier.trackingId}
                     </span>
                     <span aria-hidden="true">·</span>
@@ -374,12 +374,12 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                         : DIRECTORATE_MAPPING[activeDossier.category].en}
                     </span>
                   </div>
-                  <h3 className="mt-1 text-xl font-serif-display font-semibold text-[#1C1917]">
+                  <h3 className="mt-1 text-xl font-serif-display font-semibold text-[#0F172A]">
                     {activeDossier.title}
                   </h3>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs font-mono-tabular text-[#14532D] bg-[#F3EFE6] px-3 py-1.5 rounded-md border border-[#D6CEBE]">
+                <div className="flex items-center gap-2 text-xs font-mono-tabular text-[#006A4E] bg-[#ECFDF5] px-3 py-1.5 rounded-md border border-[#006A4E]/30">
                   <ShieldCheck className="w-4 h-4" />
                   <span>
                     {hashValid !== false
@@ -393,37 +393,37 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs bg-[#FBF9F5] p-4 rounded-lg border border-[#EBE6DF]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs bg-[#F8FAFC] p-4 rounded-lg border border-[#E2E8F0]">
                 <div>
-                  <span className="text-[#57534E] block">
+                  <span className="text-[#475569] block">
                     {lang === 'bn' ? 'অভিযুক্ত প্রতিষ্ঠান ও এলাকা' : 'Establishment & Jurisdiction'}
                   </span>
-                  <strong className="text-[#1C1917] block mt-0.5">
+                  <strong className="text-[#0F172A] block mt-0.5">
                     {activeDossier.establishmentName}
                   </strong>
-                  <span className="text-[#57534E]">{activeDossier.jurisdiction}</span>
+                  <span className="text-[#475569]">{activeDossier.jurisdiction}</span>
                 </div>
                 <div>
-                  <span className="text-[#57534E] block">
+                  <span className="text-[#475569] block">
                     {lang === 'bn' ? 'ব্যাচ নম্বর' : 'Batch / Lot Identifier'}
                   </span>
-                  <strong className="font-mono-tabular text-[#1C1917] block mt-0.5">
+                  <strong className="font-mono-tabular text-[#0F172A] block mt-0.5">
                     {activeDossier.batchNumber}
                   </strong>
-                  <span className="font-mono-tabular text-[#57534E]">
+                  <span className="font-mono-tabular text-[#475569]">
                     {lang === 'bn' ? 'উৎপাদন:' : 'MFG:'}{' '}
                     {activeDossier.manufacturedDate || (lang === 'bn' ? 'উল্লেখ নেই' : 'N/A')}
                   </span>
                 </div>
                 <div>
-                  <span className="text-[#57534E] block">
+                  <span className="text-[#475569] block">
                     {lang === 'bn' ? 'মুদ্রিত মেয়াদ ও বিশ্লেষণ' : 'Printed Expiry & Delta'}
                   </span>
-                  <strong className="font-mono-tabular text-[#9A3412] block mt-0.5">
+                  <strong className="font-mono-tabular text-[#C8102E] block mt-0.5">
                     {lang === 'bn' ? 'মেয়াদ:' : 'EXP:'}{' '}
                     {activeDossier.expiryDate || (lang === 'bn' ? 'প্রযোজ্য নয়' : 'Not applicable')}
                   </strong>
-                  <span className="text-[#57534E]">
+                  <span className="text-[#475569]">
                     {formatLocalizedExpiryStatus(
                       calculateExpiryAnalysis(activeDossier.expiryDate, activeDossier.category)
                         .statusLabel,
@@ -433,14 +433,14 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                 </div>
               </div>
 
-              <p className="text-sm text-[#44403C] leading-relaxed">{activeDossier.description}</p>
+              <p className="text-sm text-[#334155] leading-relaxed">{activeDossier.description}</p>
 
               {/* Encrypted Whistleblower Lead Inspection */}
               {activeDossier.isEncrypted && (
-                <div className="p-4 bg-[#F3EFE6] border border-[#D6CEBE] rounded-lg space-y-2">
+                <div className="p-4 bg-[#F1F5F9] border border-[#CBD5E1] rounded-lg space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold text-[#1C1917] flex items-center gap-1.5">
-                      <Lock className="w-3.5 h-3.5 text-[#14532D]" />
+                    <span className="text-xs font-semibold text-[#0F172A] flex items-center gap-1.5">
+                      <Lock className="w-3.5 h-3.5 text-[#006A4E]" />
                       <span>
                         {lang === 'bn'
                           ? 'এনক্রিপ্টেড গোপনীয় সরবরাহ-চেইন তথ্য সংযুক্ত'
@@ -450,7 +450,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                     <button
                       type="button"
                       onClick={handleAutoDecryptWhistleblower}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-white bg-[#14532D] rounded hover:bg-[#0F3F22] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-white bg-[#006A4E] rounded hover:bg-[#00523C] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                     >
                       <Unlock className="w-3 h-3" />
                       <span>
@@ -459,7 +459,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                     </button>
                   </div>
                   {decryptedNote && (
-                    <p className="text-xs text-[#1C1917] bg-white p-2.5 rounded border border-[#D6CEBE]">
+                    <p className="text-xs text-[#0F172A] bg-white p-2.5 rounded border border-[#CBD5E1]">
                       <strong>{lang === 'bn' ? 'ডিক্রিপ্টকৃত তথ্য:' : 'Decrypted Lead:'}</strong>{' '}
                       {decryptedNote}
                     </p>
@@ -481,12 +481,12 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
             {/* Official Authority Status & Verification Form */}
             <form
               onSubmit={handleCommitUpdate}
-              className="bg-white border border-[#E2DCD3] rounded-xl p-6 sm:p-8 space-y-5"
+              className="bg-white border border-[#CBD5E1] rounded-xl p-6 sm:p-8 space-y-5"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#EBE6DF] pb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#E2E8F0] pb-4">
                 <div className="flex items-center gap-2">
-                  <ClipboardCheck className="w-5 h-5 text-[#14532D] shrink-0" />
-                  <h4 className="text-base font-serif-display font-semibold text-[#1C1917]">
+                  <ClipboardCheck className="w-5 h-5 text-[#006A4E] shrink-0" />
+                  <h4 className="text-base font-serif-display font-semibold text-[#0F172A]">
                     {lang === 'bn'
                       ? 'সরকারি যাচাই প্রতিবেদন ও অবস্থা আপডেট লিপিবদ্ধ করুন'
                       : 'Record Official Authority Verification & Status Update'}
@@ -497,21 +497,21 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                   <button
                     type="button"
                     onClick={() => handleApplyQuickInspectionTemplate('confirm_violation')}
-                    className="px-2.5 py-1 text-xs font-medium bg-[#EBE6DF] hover:bg-[#DFD8CE] text-[#1C1917] rounded transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                    className="px-2.5 py-1 text-xs font-medium bg-[#E2E8F0] hover:bg-[#CBD5E1] text-[#0F172A] rounded transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                   >
                     {lang === 'bn' ? 'অভিযোগ প্রমাণিত' : 'Confirm Violation'}
                   </button>
                   <button
                     type="button"
                     onClick={() => handleApplyQuickInspectionTemplate('quarantine')}
-                    className="px-2.5 py-1 text-xs font-medium bg-[#EBE6DF] hover:bg-[#DFD8CE] text-[#1C1917] rounded transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                    className="px-2.5 py-1 text-xs font-medium bg-[#E2E8F0] hover:bg-[#CBD5E1] text-[#0F172A] rounded transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                   >
                     {lang === 'bn' ? 'ল্যাব কোয়ারেন্টাইন' : 'Lab Quarantine'}
                   </button>
                   <button
                     type="button"
                     onClick={() => handleApplyQuickInspectionTemplate('resolve')}
-                    className="px-2.5 py-1 text-xs font-medium bg-[#EBE6DF] hover:bg-[#DFD8CE] text-[#1C1917] rounded transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                    className="px-2.5 py-1 text-xs font-medium bg-[#E2E8F0] hover:bg-[#CBD5E1] text-[#0F172A] rounded transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                   >
                     {lang === 'bn' ? 'নিষ্পত্তি সম্পন্ন' : 'Mark Resolved'}
                   </button>
@@ -519,7 +519,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
               </div>
 
               {formError && (
-                <p className="p-3 text-xs text-[#9A3412] bg-orange-50 border border-orange-200 rounded-lg">
+                <p className="p-3 text-xs text-[#C8102E] bg-red-50 border border-red-200 rounded-lg">
                   {formError}
                 </p>
               )}
@@ -528,7 +528,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                 <div>
                   <label
                     htmlFor="authority-status-select"
-                    className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                    className="block text-xs font-semibold text-[#0F172A] mb-1.5"
                   >
                     {lang === 'bn' ? 'অভিযোগের সরকারি অবস্থা *' : 'Official Dossier Status *'}
                   </label>
@@ -536,7 +536,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                     id="authority-status-select"
                     value={status}
                     onChange={(e) => setStatus(e.target.value as ObjectionStatus)}
-                    className="w-full px-3 py-2 text-xs bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] font-medium"
+                    className="w-full px-3 py-2 text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] font-medium"
                   >
                     {(Object.keys(statusLabels) as ObjectionStatus[]).map((st) => (
                       <option key={st} value={st}>
@@ -549,7 +549,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                 <div>
                   <label
                     htmlFor="authority-severity-select"
-                    className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                    className="block text-xs font-semibold text-[#0F172A] mb-1.5"
                   >
                     {lang === 'bn' ? 'ঝুঁকি মাত্রা *' : 'Assessed Severity Tier *'}
                   </label>
@@ -557,7 +557,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                     id="authority-severity-select"
                     value={severity}
                     onChange={(e) => setSeverity(e.target.value as ObjectionSeverity)}
-                    className="w-full px-3 py-2 text-xs bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917] font-medium"
+                    className="w-full px-3 py-2 text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A] font-medium"
                   >
                     {(Object.keys(severityLabels) as ObjectionSeverity[]).map((sev) => (
                       <option key={sev} value={sev}>
@@ -570,7 +570,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                 <div>
                   <label
                     htmlFor="authority-badge-input"
-                    className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                    className="block text-xs font-semibold text-[#0F172A] mb-1.5"
                   >
                     {lang === 'bn'
                       ? 'পরিদর্শক / ম্যাজিস্ট্রেট ব্যাজ নম্বর *'
@@ -582,7 +582,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                     value={authorityBadgeId}
                     onChange={(e) => setAuthorityBadgeId(e.target.value)}
                     placeholder="e.g. DGDA-INSP-8821"
-                    className="w-full px-3 py-2 text-xs font-mono-tabular bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917]"
+                    className="w-full px-3 py-2 text-xs font-mono-tabular bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A]"
                   />
                 </div>
               </div>
@@ -590,7 +590,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
               <div>
                 <label
                   htmlFor="authority-note-input"
-                  className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                  className="block text-xs font-semibold text-[#0F172A] mb-1.5"
                 >
                   {lang === 'bn'
                     ? 'মাঠ পরিদর্শন ও ল্যাবরেটরি যাচাই প্রতিবেদন *'
@@ -606,14 +606,14 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                       ? 'ল্যাবরেটরি ব্যাচ পরীক্ষার ফলাফল, জব্দকৃত মজুদের সংখ্যা বা মাঠ পরিদর্শনের বিবরণ লিখুন...'
                       : 'Enter official laboratory batch assay results, stock seizure counts, or field inspection findings...'
                   }
-                  className="w-full px-3.5 py-2.5 text-sm bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917]"
+                  className="w-full px-3.5 py-2.5 text-sm bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A]"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="authority-enforcement-input"
-                  className="block text-xs font-semibold text-[#1C1917] mb-1.5"
+                  className="block text-xs font-semibold text-[#0F172A] mb-1.5"
                 >
                   {lang === 'bn'
                     ? 'ভ্রাম্যমাণ আদালতের দণ্ড বা জব্দ আদেশ'
@@ -629,14 +629,14 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                       ? 'যেমন: বাধ্যতামূলক ব্যাচ প্রত্যাহার আদেশ জারি এবং লাইসেন্স স্থগিত।'
                       : 'e.g. Mandatory Batch Recall Notice #DR-2026-119 issued; license suspended.'
                   }
-                  className="w-full px-3.5 py-2.5 text-sm bg-[#FBF9F5] border border-[#D6CEBE] rounded-lg text-[#1C1917]"
+                  className="w-full px-3.5 py-2.5 text-sm bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg text-[#0F172A]"
                 />
               </div>
 
               <div className="pt-2 flex items-center justify-between gap-4">
-                <span className="text-xs text-[#57534E]">
+                <span className="text-xs text-[#475569]">
                   {lang === 'bn' ? 'এই আদেশটি স্থায়ীভাবে ' : 'Updates are permanently appended to '}
-                  <strong className="font-mono-tabular text-[#1C1917]">
+                  <strong className="font-mono-tabular text-[#0F172A]">
                     {activeDossier.trackingId}
                   </strong>
                   {lang === 'bn' ? ' নথির অডিট লগে যুক্ত হবে।' : ' Chain-of-Custody log.'}
@@ -645,7 +645,7 @@ export const AuthorityDeskSection: React.FC<AuthorityDeskSectionProps> = ({
                   type="submit"
                   disabled={isUpdating}
                   aria-label="Commit Official Update"
-                  className="px-5 py-2.5 text-xs font-semibold text-white bg-[#14532D] rounded-lg hover:bg-[#0F3F22] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                  className="px-5 py-2.5 text-xs font-semibold text-white bg-[#006A4E] rounded-lg hover:bg-[#00523C] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                 >
                   {isUpdating
                     ? lang === 'bn'

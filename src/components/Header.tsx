@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onSelectTab, lang }) 
   ];
 
   return (
-    <header className="sticky top-0 z-30 bg-[#FBF9F5]/95 backdrop-blur-xs border-b border-[#E2DCD3]">
+    <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-xs border-t-2 border-t-[#006A4E] border-b border-b-[#CBD5E1]">
       <div className="max-w-[1360px] mx-auto flex items-center justify-between gap-8 px-6 py-4">
         {/* Zone 1: Single text element Brand Wordmark */}
         <a
@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onSelectTab, lang }) 
             e.preventDefault();
             onSelectTab('registry');
           }}
-          className="font-serif-display text-lg sm:text-xl font-bold tracking-tight text-[#14532D] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14532D]"
+          className="font-serif-display text-lg sm:text-xl font-bold tracking-tight text-[#006A4E] whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006A4E]"
         >
           {t.brandTitle}
         </a>
@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onSelectTab, lang }) 
         {/* Zone 2: 4 concise single-line navigation links */}
         <nav
           aria-label="Primary Navigation"
-          className="flex items-center gap-6 overflow-x-auto text-sm font-medium text-[#57534E]"
+          className="flex items-center gap-6 overflow-x-auto text-sm font-medium text-[#475569]"
         >
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
@@ -51,8 +51,8 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onSelectTab, lang }) 
                 aria-current={isActive ? 'page' : undefined}
                 className={`py-1 transition-colors whitespace-nowrap shrink-0 border-b-2 ${
                   isActive
-                    ? 'border-[#14532D] text-[#1C1917] font-semibold'
-                    : 'border-transparent hover:text-[#1C1917] hover:border-[#D6CEBE]'
+                    ? 'border-[#006A4E] text-[#006A4E] font-semibold'
+                    : 'border-transparent hover:text-[#0F172A] hover:border-[#CBD5E1]'
                 }`}
               >
                 {item.label}
@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onSelectTab, lang }) 
           <button
             type="button"
             onClick={() => onSelectTab('submit')}
-            className="px-4 py-2 text-xs font-semibold text-white bg-[#14532D] rounded-lg hover:bg-[#0F3F22] transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14532D]"
+            className="px-4 py-2 text-xs font-semibold text-white bg-[#006A4E] rounded-lg hover:bg-[#00523C] transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006A4E] cursor-pointer"
           >
             {t.ctaSubmit}
           </button>

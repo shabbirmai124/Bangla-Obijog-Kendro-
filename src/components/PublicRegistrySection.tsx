@@ -100,9 +100,9 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
     switch (status) {
       case 'verified_violation':
       case 'enforcement_action':
-        return <AlertTriangle className="w-3.5 h-3.5 text-[#9A3412] shrink-0" />;
+        return <AlertTriangle className="w-3.5 h-3.5 text-[#C8102E] shrink-0" />;
       case 'resolved':
-        return <CheckCircle2 className="w-3.5 h-3.5 text-[#14532D] shrink-0" />;
+        return <CheckCircle2 className="w-3.5 h-3.5 text-[#006A4E] shrink-0" />;
       default:
         return <Clock className="w-3.5 h-3.5 text-[#1E3A8A] shrink-0" />;
     }
@@ -115,31 +115,31 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
       className="max-w-[1360px] mx-auto px-6 py-12"
     >
       {/* Section Header */}
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#E2DCD3]">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#CBD5E1]">
         <div>
-          <p className="text-xs uppercase tracking-widest text-[#14532D] font-semibold">
+          <p className="text-xs uppercase tracking-widest text-[#006A4E] font-semibold">
             {t.registryKicker}
           </p>
           <h2
             id="registry-heading"
-            className="mt-1 text-2xl sm:text-3xl font-serif-display font-semibold text-[#1C1917]"
+            className="mt-1 text-2xl sm:text-3xl font-serif-display font-semibold text-[#0F172A]"
           >
             {t.registryTitle}
           </h2>
-          <p className="mt-2 text-sm text-[#57534E] max-w-2xl">{t.registrySubtitle}</p>
+          <p className="mt-2 text-sm text-[#475569] max-w-2xl">{t.registrySubtitle}</p>
         </div>
 
         {/* Search & Status Filter Controls */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <div className="relative min-w-[260px]">
-            <Search className="w-4 h-4 text-[#78716C] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#64748B] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="search"
               aria-label="Search objections by tracking ID, batch number, or establishment"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={t.searchPlaceholder}
-              className="w-full pl-9 pr-3 py-2 text-xs bg-white border border-[#D6CEBE] rounded-lg text-[#1C1917] placeholder:text-[#78716C] focus:outline-none focus:border-[#14532D]"
+              className="w-full pl-9 pr-3 py-2 text-xs bg-white border border-[#CBD5E1] rounded-lg text-[#0F172A] placeholder:text-[#64748B] focus:outline-none focus:border-[#006A4E]"
             />
           </div>
 
@@ -150,7 +150,7 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
             id="registry-status-select"
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value as 'all' | ObjectionStatus)}
-            className="px-3 py-2 text-xs bg-white border border-[#D6CEBE] rounded-lg text-[#1C1917] focus:outline-none focus:border-[#14532D]"
+            className="px-3 py-2 text-xs bg-white border border-[#CBD5E1] rounded-lg text-[#0F172A] focus:outline-none focus:border-[#006A4E]"
           >
             <option value="all">
               {t.allStatuses} (
@@ -170,7 +170,7 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
         <div
           role="group"
           aria-label="Filter dossiers by regulatory category"
-          className="flex items-center gap-1 p-1 bg-[#EBE6DF] rounded-lg overflow-x-auto max-w-full"
+          className="flex items-center gap-1 p-1 bg-[#E2E8F0] rounded-lg overflow-x-auto max-w-full"
         >
           {filterButtons.map((btn) => {
             const active = categoryFilter === btn.id;
@@ -181,8 +181,8 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                 onClick={() => setCategoryFilter(btn.id)}
                 className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                   active
-                    ? 'bg-white text-[#1C1917] shadow-xs font-semibold'
-                    : 'text-[#57534E] hover:text-[#1C1917]'
+                    ? 'bg-[#006A4E] text-white shadow-xs font-semibold'
+                    : 'text-[#334155] hover:text-[#0F172A] hover:bg-white/60'
                 }`}
               >
                 {btn.label}
@@ -191,7 +191,7 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
           })}
         </div>
 
-        <div className="text-xs text-[#57534E] font-mono-tabular">
+        <div className="text-xs text-[#475569] font-mono-tabular">
           {lang === 'bn'
             ? `মোট ${toBengaliDigits(objections.length)}টি সিলযুক্ত নথির মধ্যে ${toBengaliDigits(
                 filteredObjections.length
@@ -202,8 +202,8 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
 
       {/* Dossier List */}
       {filteredObjections.length === 0 ? (
-        <div className="mt-8 p-12 text-center bg-white border border-[#E2DCD3] rounded-xl">
-          <p className="font-serif-display text-lg text-[#1C1917]">
+        <div className="mt-8 p-12 text-center bg-white border border-[#CBD5E1] rounded-xl">
+          <p className="font-serif-display text-lg text-[#0F172A]">
             {lang === 'bn'
               ? 'আপনার অনুসন্ধান বা ফিল্টারের সাথে কোনো অভিযোগ নথি মেলেনি।'
               : 'No public objection dossiers match your current filter criteria.'}
@@ -216,21 +216,21 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                 setStatusFilter('all');
                 setSearchQuery('');
               }}
-              className="px-4 py-2 text-xs font-semibold text-[#1C1917] bg-[#EBE6DF] rounded-lg hover:bg-[#DFD8CE] transition-colors"
+              className="px-4 py-2 text-xs font-semibold text-[#0F172A] bg-[#E2E8F0] rounded-lg hover:bg-[#CBD5E1] transition-colors"
             >
               {lang === 'bn' ? 'ফিল্টার রিসেট করুন' : 'Reset Filters'}
             </button>
             <button
               type="button"
               onClick={onFileNewClick}
-              className="px-4 py-2 text-xs font-semibold text-white bg-[#14532D] rounded-lg hover:bg-[#0F3F22] transition-colors"
+              className="px-4 py-2 text-xs font-semibold text-white bg-[#006A4E] rounded-lg hover:bg-[#00523C] transition-colors"
             >
               {lang === 'bn' ? 'নতুন অভিযোগ দাখিল করুন' : 'File New Objection'}
             </button>
           </div>
         </div>
       ) : (
-        <div className="mt-6 divide-y divide-[#E2DCD3] border-t border-b border-[#E2DCD3] bg-white rounded-xl overflow-hidden border">
+        <div className="mt-6 divide-y divide-[#E2E8F0] border border-[#CBD5E1] bg-white rounded-xl overflow-hidden">
           {filteredObjections.map((rawItem) => {
             const item = getLocalizedDossier(rawItem, lang);
             const expiryInfo = calculateExpiryAnalysis(item.expiryDate, item.category);
@@ -240,18 +240,18 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
               <article
                 key={item.id}
                 data-testid={`dossier-row-${item.trackingId}`}
-                className="p-6 hover:bg-[#FBF9F5] transition-colors"
+                className="p-6 hover:bg-[#F8FAFC] transition-colors"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                   {/* Left & Center Dossier Details (8 cols) */}
                   <div className="lg:col-span-8">
                     {/* Clean unboxed inline metadata with typographic separators (Zero-Pill Discipline) */}
-                    <div className="flex flex-wrap items-center gap-2 text-xs text-[#57534E]">
-                      <span className="font-mono-tabular font-bold text-[#14532D]">
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-[#475569]">
+                      <span className="font-mono-tabular font-bold text-[#006A4E]">
                         {item.trackingId}
                       </span>
                       <span aria-hidden="true">·</span>
-                      <span className="font-medium text-[#1C1917]">
+                      <span className="font-medium text-[#0F172A]">
                         {catLabels[item.category]}
                       </span>
                       <span aria-hidden="true">·</span>
@@ -259,7 +259,7 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                         {lang === 'bn' ? directorate.bn : directorate.en}
                       </span>
                       <span aria-hidden="true">·</span>
-                      <span className="inline-flex items-center gap-1 font-medium text-[#1C1917]">
+                      <span className="inline-flex items-center gap-1 font-medium text-[#0F172A]">
                         {getStatusIcon(item.status)}
                         <span>{statusLabels[item.status]}</span>
                       </span>
@@ -267,8 +267,8 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                       <span
                         className={
                           item.severity === 'critical'
-                            ? 'text-[#9A3412] font-semibold'
-                            : 'text-[#57534E]'
+                            ? 'text-[#C8102E] font-semibold'
+                            : 'text-[#475569]'
                         }
                       >
                         {severityLabels[item.severity]}
@@ -287,28 +287,28 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                     </div>
 
                     {/* Primary Dossier Headline */}
-                    <h3 className="mt-2 text-lg font-serif-display font-semibold text-[#1C1917] leading-snug">
+                    <h3 className="mt-2 text-lg font-serif-display font-semibold text-[#0F172A] leading-snug">
                       {item.title}
                     </h3>
 
                     {/* Establishment, Jurisdiction, Batch, and Expiry Metadata Line */}
-                    <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#44403C]">
+                    <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#334155]">
                       <span>
-                        <strong className="font-semibold text-[#1C1917]">
+                        <strong className="font-semibold text-[#0F172A]">
                           {lang === 'bn' ? 'প্রতিষ্ঠান:' : 'Establishment:'}
                         </strong>{' '}
                         {item.establishmentName}
                       </span>
                       <span aria-hidden="true">·</span>
                       <span>
-                        <strong className="font-semibold text-[#1C1917]">
+                        <strong className="font-semibold text-[#0F172A]">
                           {lang === 'bn' ? 'এলাকা:' : 'Jurisdiction:'}
                         </strong>{' '}
                         {item.jurisdiction}
                       </span>
                       <span aria-hidden="true">·</span>
                       <span className="font-mono-tabular">
-                        <strong className="font-sans font-semibold text-[#1C1917]">
+                        <strong className="font-sans font-semibold text-[#0F172A]">
                           {lang === 'bn' ? 'ব্যাচ নম্বর:' : 'Batch/Lot:'}
                         </strong>{' '}
                         {item.batchNumber}
@@ -316,7 +316,7 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                       {item.expiryDate && (
                         <>
                           <span aria-hidden="true">·</span>
-                          <span className="font-mono-tabular text-[#9A3412] font-medium">
+                          <span className="font-mono-tabular text-[#C8102E] font-medium">
                             {lang === 'bn' ? 'মেয়াদ উত্তীর্ণের তারিখ:' : 'Printed Exp:'}{' '}
                             {item.expiryDate} ({expiryText})
                           </span>
@@ -325,16 +325,16 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                     </div>
 
                     {/* Factual Description Excerpt */}
-                    <p className="mt-3 text-sm text-[#44403C] leading-relaxed">
+                    <p className="mt-3 text-sm text-[#334155] leading-relaxed">
                       {item.description}
                     </p>
 
                     {/* Authority Verification / Enforcement Note if present */}
                     {(item.authorityNote || item.enforcementAction) && (
-                      <div className="mt-4 p-3.5 bg-[#F3EFE6] border border-[#DFD8CE] rounded-lg text-xs text-[#1C1917]">
-                        <div className="flex flex-wrap items-center gap-2 text-[#57534E] mb-1">
-                          <ShieldCheck className="w-3.5 h-3.5 text-[#14532D]" />
-                          <span className="font-semibold text-[#1C1917]">
+                      <div className="mt-4 p-3.5 bg-[#F1F5F9] border border-[#CBD5E1] rounded-lg text-xs text-[#0F172A]">
+                        <div className="flex flex-wrap items-center gap-2 text-[#475569] mb-1">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#006A4E]" />
+                          <span className="font-semibold text-[#0F172A]">
                             {lang === 'bn'
                               ? 'সরকারি কর্তৃপক্ষের তদন্ত ও যাচাই প্রতিবেদন'
                               : 'Official Authority Verification'}
@@ -351,7 +351,7 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                         </div>
                         {item.authorityNote && <p className="mt-1">{item.authorityNote}</p>}
                         {item.enforcementAction && (
-                          <p className="mt-1.5 font-semibold text-[#14532D]">
+                          <p className="mt-1.5 font-semibold text-[#006A4E]">
                             {lang === 'bn' ? 'সরকারি আদেশ:' : 'Directive:'} {item.enforcementAction}
                           </p>
                         )}
@@ -359,8 +359,8 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                     )}
 
                     {/* Cryptographic Seal & Action Controls */}
-                    <div className="mt-4 pt-3 border-t border-[#EBE6DF] flex flex-wrap items-center justify-between gap-4">
-                      <div className="flex items-center gap-2 text-xs font-mono-tabular text-[#57534E]">
+                    <div className="mt-4 pt-3 border-t border-[#E2E8F0] flex flex-wrap items-center justify-between gap-4">
+                      <div className="flex items-center gap-2 text-xs font-mono-tabular text-[#475569]">
                         <span>
                           {lang === 'bn' ? 'ডিজিটাল সিল:' : 'SHA-256:'}{' '}
                           {item.sha256Hash.slice(0, 18)}…
@@ -376,7 +376,7 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                           type="button"
                           onClick={() => onTrackObjection(item.trackingId)}
                           aria-label={`Track status for ${item.trackingId}`}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-[#14532D] bg-[#14532D]/10 hover:bg-[#14532D]/20 rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-[#006A4E] bg-[#ECFDF5] border border-[#006A4E]/25 hover:bg-[#D1FAE5] rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                         >
                           <span>
                             {lang === 'bn' ? 'ট্র্যাক করুন:' : 'Track'} {item.trackingId}
@@ -388,7 +388,7 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                           type="button"
                           onClick={() => onInspectDossier(rawItem)}
                           aria-label={`Inspect evidence for ${item.trackingId}`}
-                          className="px-3 py-1.5 text-xs font-medium text-[#1C1917] border border-[#D6CEBE] hover:bg-[#EBE6DF] rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                          className="px-3 py-1.5 text-xs font-medium text-[#0F172A] border border-[#CBD5E1] hover:bg-[#F1F5F9] rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
                         >
                           {lang === 'bn' ? 'বিস্তারিত নথি দেখুন' : 'Inspect Full Dossier'}
                         </button>
@@ -397,7 +397,7 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
                           type="button"
                           onClick={() => onVerifyInAuthorityDesk(item.id)}
                           aria-label={`Authority verify ${item.trackingId}`}
-                          className="px-3 py-1.5 text-xs font-medium text-[#57534E] hover:text-[#1C1917] underline underline-offset-4 whitespace-nowrap shrink-0 cursor-pointer"
+                          className="px-3 py-1.5 text-xs font-medium text-[#475569] hover:text-[#0F172A] underline underline-offset-4 whitespace-nowrap shrink-0 cursor-pointer"
                         >
                           {lang === 'bn' ? 'কর্তৃপক্ষ যাচাই' : 'Authority Review'}
                         </button>
@@ -407,18 +407,18 @@ export const PublicRegistrySection: React.FC<PublicRegistrySectionProps> = ({
 
                   {/* Right Column: Compact Evidence Media Preview (4 cols) */}
                   <div className="lg:col-span-4">
-                    <div className="flex items-center justify-between text-xs text-[#57534E] mb-1.5">
-                      <span className="inline-flex items-center gap-1 font-medium text-[#1C1917]">
+                    <div className="flex items-center justify-between text-xs text-[#475569] mb-1.5">
+                      <span className="inline-flex items-center gap-1 font-medium text-[#0F172A]">
                         {item.mediaType === 'video' ? (
                           <>
-                            <FileVideo className="w-3.5 h-3.5 text-[#14532D]" />
+                            <FileVideo className="w-3.5 h-3.5 text-[#006A4E]" />
                             <span>
                               {lang === 'bn' ? 'ভিডিও প্রমাণ সংযুক্ত' : 'Video Evidence Attached'}
                             </span>
                           </>
                         ) : (
                           <>
-                            <ImageIcon className="w-3.5 h-3.5 text-[#14532D]" />
+                            <ImageIcon className="w-3.5 h-3.5 text-[#006A4E]" />
                             <span>
                               {lang === 'bn' ? 'আলোকচিত্র প্রমাণ' : 'Photographic Evidence'}
                             </span>
